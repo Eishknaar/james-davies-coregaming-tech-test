@@ -1,10 +1,12 @@
 import {AbstractViewProperties} from "../../abstract/AbstractViewProperties";
-import {SpriteProperties} from "../../tools/properties/SpriteProperties";
 import {GameStyle} from "../../style/GameStyle";
+import {SpriteProperties} from "../../tools/properties/SpriteProperties";
+import {AnimatedSpriteProperties} from "../../tools/properties/AnimatedSpriteProperties";
 
 export class CellViewProperties extends AbstractViewProperties {
 
     public symbolProperties: SpriteProperties;
+    public animatedSpriteProperties: AnimatedSpriteProperties;
 
     constructor(){
         super();
@@ -13,6 +15,7 @@ export class CellViewProperties extends AbstractViewProperties {
 
     protected setDefaultValues(): void {
         this.symbolProperties = new SpriteProperties(GameStyle.BANANA);
+        this.animatedSpriteProperties = new AnimatedSpriteProperties("sequence", 6, true);
     }
 
 }
