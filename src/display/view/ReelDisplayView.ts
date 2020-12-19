@@ -1,8 +1,9 @@
-import {AbstractView} from "../../abstract/AbstractView";
+import {AbstractGameView} from "../../abstract/AbstractGameView";
 import {ReelDisplayViewProperties} from "../properties/ReelDisplayViewProperties";
 import {AbstractViewProperties} from "../../abstract/AbstractViewProperties";
+import {Sprite} from "../../tools/view/Sprite";
 
-export class ReelDisplayView extends AbstractView {
+export class ReelDisplayView extends AbstractGameView {
 
     protected properties: ReelDisplayViewProperties;
 
@@ -19,6 +20,8 @@ export class ReelDisplayView extends AbstractView {
     }
 
     protected createBackground(): void {
+        let sprite: Sprite = new Sprite(this.properties.spriteProperties);
+        this.addChild(sprite);
 
     }
 

@@ -1,18 +1,24 @@
 import "pixi.js";
 import pixiManager from "graphics/PixiManager";
 import {Factory} from "./factory/Factory";
+import {ImageLoader} from "./loader/ImageLoader";
 
 class Main {
 
     protected factory: Factory;
+    protected loader: ImageLoader;
 
     constructor() {
         this.createFactory();
-        this.create();
+        this.createLoader();
     }
 
     protected createFactory(): void {
         this.factory = new Factory();
+    }
+
+    protected createLoader(): void {
+        this.loader = new ImageLoader(this.create, this);
     }
 
     protected create(): void {

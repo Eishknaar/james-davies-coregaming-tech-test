@@ -1,8 +1,8 @@
-import {AbstractView} from "../../abstract/AbstractView";
+import {AbstractGameView} from "../../abstract/AbstractGameView";
 import {AbstractViewProperties} from "../../abstract/AbstractViewProperties";
 import {CellViewProperties} from "../properties/CellViewProperties";
 
-export class CellView extends AbstractView {
+export class CellView extends AbstractGameView {
 
     protected properties: CellViewProperties;
 
