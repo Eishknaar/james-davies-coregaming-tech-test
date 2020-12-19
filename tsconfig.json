@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "module": "commonjs",
+    "target": "ES5",
+    "allowJs": true,
+    "baseUrl": "src",
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationDir": "./dev/dts",
+    "outDir": "./dev/js/"
+  }
+}
