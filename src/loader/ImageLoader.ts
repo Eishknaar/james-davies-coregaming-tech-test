@@ -1,9 +1,6 @@
-import {GameStyle} from "../style/GameStyle";
-
 export class ImageLoader {
 
-    private imageNames: string[];
-    private paths: string[];
+    private spriteSheetPath: string;
     private onLoaded: Function;
     private scope: any;
 
@@ -18,36 +15,23 @@ export class ImageLoader {
     }
 
     protected create(): void {
-        this.createImageNames();
-        this.createPaths();
+        this.createPath();
         this.loadImages();
     }
 
-    private createImageNames(): void {
-        this.imageNames = GameStyle.getAllValues();
-    }
-
-    private createPaths(): void {
-        this.paths = [];
-        for(let imageName of this.imageNames){
-            this.createPath(imageName)
-        }
-    }
-
-    private createPath(name: string){
-        let path: string = "assets/" + name + ".png"
-        this.paths.push(path);
+    private createPath(): void {
+        this.spriteSheetPath = "spritesheet/spritesheet.json";
     }
 
     private loadImages(): void {
-        PIXI.loader.add(this.paths).load(() => this.onAssetsLoaded());
+        PIXI.loader
+            .add(this.spriteSheetPath)
+            .load(() => this.onAssetsLoaded());
     }
 
     public onAssetsLoaded(): void {
         this.onLoaded.call(this.scope);
     }
-
-
 
 
 }

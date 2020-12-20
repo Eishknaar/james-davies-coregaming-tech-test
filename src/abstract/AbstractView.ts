@@ -18,4 +18,9 @@ export class AbstractView extends PIXI.Container {
         this.position = this.coreProperties.position;
     }
 
+    public destroy(): void {
+        super.destroy();
+        this.coreProperties = null;
+    }
+
 }

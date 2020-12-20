@@ -2,7 +2,7 @@ import {AbstractViewProperties} from "../../abstract/AbstractViewProperties";
 export class SpriteProperties extends AbstractViewProperties {
 
     public imageName: string;
-    public imageRoot: string;
+    public fileType: string;
 
 
     constructor(imageName: string, position?: PIXI.Point) {
@@ -12,7 +12,7 @@ export class SpriteProperties extends AbstractViewProperties {
     }
 
     protected setDefaultValues(): void {
-        this.imageRoot = "assets"
+        this.fileType = ".png";
     }
 
 }

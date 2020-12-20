@@ -6,8 +6,7 @@ export class Sprite extends AbstractView {
 
     protected properties: SpriteProperties;
 
-    protected imagePath: string;
-    protected texture: PIXI.Texture;
+    protected spriteSheet: PIXI.Spritesheet;
     protected sprite: PIXI.Sprite;
 
     constructor(properties: AbstractViewProperties){
@@ -21,22 +20,25 @@ export class Sprite extends AbstractView {
     }
 
     protected create(): void {
-        this.createImagePath();
-        this.createTexture();
+        this.createSpriteSheet();
         this.createSprite();
     }
 
-    protected createImagePath(): void {
-        this.imagePath = this.properties.imageRoot + "/" + this.properties.imageName + ".png";
-    }
-
-    protected createTexture(): void {
-        this.texture = PIXI.Texture.fromImage(this.imagePath);
+    protected createSpriteSheet(): void {
+        this.spriteSheet = PIXI.loader.resources["spritesheet/spritesheet.json"].spritesheet;
     }
 
     protected createSprite(): void {
-        this.sprite = new PIXI.Sprite(this.texture);
+        let path: string = this.properties.imageName + this.properties.fileType;
+        this.sprite = new PIXI.Sprite(this.spriteSheet.textures[path]);
         this.addChild(this.sprite);
+    }
+
+    public destroy(): void {
+        super.destroy();
+        this.sprite.destroy();
+        this.spriteSheet.destroy();
+        this.properties = null;
     }
 
 }

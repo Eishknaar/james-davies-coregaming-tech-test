@@ -1,12 +1,11 @@
-import {AbstractView} from "../../abstract/AbstractView";
+import {Sprite} from "./Sprite";
 import {AnimatedSpriteProperties} from "../properties/AnimatedSpriteProperties";
 import {AbstractViewProperties} from "../../abstract/AbstractViewProperties";
 
-export class AnimatedSprite extends AbstractView {
+export class AnimatedSprite extends Sprite {
 
     protected properties: AnimatedSpriteProperties;
-    protected textures: PIXI.Texture[];
-    protected animatedSprite: PIXI.extras.AnimatedSprite;
+    protected sprite: PIXI.extras.AnimatedSprite;
 
     private completeHandler: Function;
     private completeHandlerScope: any;
@@ -15,71 +14,42 @@ export class AnimatedSprite extends AbstractView {
     private loopHandler: Function;
     private loopHandlerScope: any;
 
-
-    constructor(properties: AbstractViewProperties) {
-        super(properties);
-        this.create();
-    }
-
     protected createProperties(properties: AbstractViewProperties) {
         super.createProperties(properties);
         this.properties = <AnimatedSpriteProperties>properties;
     }
 
-    protected create(): void {
-        this.createTextures();
-        this.createAnimatedSprite();
+    protected createSprite(): void {
+        this.sprite = new PIXI.extras.AnimatedSprite(this.spriteSheet.animations[this.properties.imageName]);
+        this.sprite.loop = this.properties.loop;
+        this.sprite.onComplete = () => this.onComplete();
+        this.sprite.onFrameChange = () => this.onFrameChange();
+        this.sprite.onLoop = () => this.onLoop();
+        this.addChild(this.sprite);
     }
-
-    protected createTextures(): void {
-        this.textures = [];
-        for (let frame = 1; frame <= this.properties.numberOfFrames; frame++) {
-            this.createTexture(frame);
-        }
-    }
-
-    protected createTexture(frame: number): void {
-        let precisionFrame: string = frame.toPrecision(4);
-        let splitPrecision: string[] = precisionFrame.split(".");
-        let zeroes: string = splitPrecision[1];
-        let postfix: string = zeroes + frame;
-        let path: string = this.properties.imageRoot + "/" + this.properties.imagePrefix + postfix + this.properties.fileType;
-        let texture: PIXI.Texture = PIXI.Texture.fromImage(path);
-        this.textures.push(texture);
-    }
-
-    protected createAnimatedSprite(): void {
-        this.animatedSprite = new PIXI.extras.AnimatedSprite(this.textures);
-        this.animatedSprite.loop = this.properties.loop;
-        this.animatedSprite.onComplete = () => this.onComplete();
-        this.animatedSprite.onFrameChange = () => this.onFrameChange();
-        this.animatedSprite.onLoop = () => this.onLoop();
-        this.addChild(this.animatedSprite);
-    }
-
 
     public play(): void {
-        this.animatedSprite.play();
+        this.sprite.play();
     }
 
     public gotoAndPlay(frameNumber: number): void {
-        this.animatedSprite.gotoAndPlay(frameNumber);
+        this.sprite.gotoAndPlay(frameNumber);
     }
 
     public gotoAndStop(frameNumber: number): void {
-        this.animatedSprite.gotoAndStop(frameNumber);
+        this.sprite.gotoAndStop(frameNumber);
     }
 
     public stop(): void {
-        this.animatedSprite.stop();
+        this.sprite.stop();
     }
 
     public setAnimationSpeed(speed: number): void {
-        this.animatedSprite.animationSpeed = speed;
+        this.sprite.animationSpeed = speed;
     }
 
     public setLoop(loop: boolean): void {
-        this.animatedSprite.loop = loop;
+        this.sprite.loop = loop;
     }
 
     public setCompleteListener(handler: Function, scope: any): void {
@@ -88,15 +58,15 @@ export class AnimatedSprite extends AbstractView {
     }
 
     public isPlaying(): boolean {
-        return this.animatedSprite.playing;
+        return this.sprite.playing;
     }
 
     public getTotalFrames(): number {
-        return this.animatedSprite.totalFrames;
+        return this.sprite.totalFrames;
     }
 
     public getCurrentFrame(): number {
-        return this.animatedSprite.currentFrame;
+        return this.sprite.currentFrame;
     }
 
     private onComplete(): void {
@@ -118,6 +88,8 @@ export class AnimatedSprite extends AbstractView {
     }
 
     public destroy(): void {
+        super.destroy();
+        this.sprite.destroy();
         this.properties = null;
         this.completeHandler = null;
         this.completeHandlerScope = null;
@@ -125,10 +97,6 @@ export class AnimatedSprite extends AbstractView {
         this.frameHandlerScope = null;
         this.loopHandler = null;
         this.loopHandlerScope = null;
-        this.animatedSprite.destroy();
-        for (let texture of this.textures) {
-            texture.destroy();
-        }
 
     }
 

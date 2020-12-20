@@ -1,25 +1,21 @@
-import {AbstractViewProperties} from "../../abstract/AbstractViewProperties";
+import {SpriteProperties} from "./SpriteProperties";
 
-export class AnimatedSpriteProperties extends AbstractViewProperties {
+export class AnimatedSpriteProperties extends SpriteProperties {
 
-    public imagePrefix: string
     public numberOfFrames: number
     public loop: boolean;
     public significantDigits: number;
-    public imageRoot: string;
     public fileType: string;
 
     constructor(imageName: string, numberOfFrames: number, loop?: boolean, position?: PIXI.Point) {
-        super(position);
-        this.imagePrefix = imageName;
+        super(imageName, position);
         this.numberOfFrames = numberOfFrames;
         this.loop = loop;
-        this.setDefaultValues();
     }
 
     protected setDefaultValues(): void {
+        super.setDefaultValues();
         this.significantDigits = 4;
-        this.imageRoot = "assets";
         this.fileType = ".png";
     }
 
