@@ -1,4 +1,4 @@
-import {AbstractViewProperties} from "../../abstract/AbstractViewProperties";
+import {AbstractViewProperties} from "./AbstractViewProperties";
 
 export class PanelProperties extends AbstractViewProperties {
 

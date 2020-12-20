@@ -1,9 +1,9 @@
-import {ReelDisplayView} from "../display/view/ReelDisplayView";
-import {ReelDisplayViewProperties} from "../display/properties/ReelDisplayViewProperties";
-import {ReelView} from "../display/view/ReelView";
-import {ReelViewProperties} from "../display/properties/ReelViewProperties";
-import {CellView} from "../display/view/CellView";
-import {CellViewProperties} from "../display/properties/CellViewProperties";
+import {ReelDisplayView} from "../../display/view/ReelDisplayView";
+import {ReelDisplayViewProperties} from "../../display/properties/ReelDisplayViewProperties";
+import {ReelView} from "../../display/view/ReelView";
+import {ReelViewProperties} from "../../display/properties/ReelViewProperties";
+import {CellView} from "../../display/view/CellView";
+import {CellViewProperties} from "../../display/properties/CellViewProperties";
 import {Model} from "../model/Model";
 
 export class Factory {

@@ -1,4 +1,4 @@
-import {AbstractViewProperties} from "./AbstractViewProperties";
+import {AbstractViewProperties} from "../properties/AbstractViewProperties";
 
 export class AbstractView extends PIXI.Container {
 

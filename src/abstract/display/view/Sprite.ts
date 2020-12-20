@@ -1,6 +1,6 @@
-import {AbstractView} from "../../abstract/AbstractView";
+import {AbstractView} from "./AbstractView";
 import {SpriteProperties} from "../properties/SpriteProperties";
-import {AbstractViewProperties} from "../../abstract/AbstractViewProperties";
+import {AbstractViewProperties} from "../properties/AbstractViewProperties";
 
 export class Sprite extends AbstractView {
 

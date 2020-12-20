@@ -1,7 +1,7 @@
 import "pixi.js";
-import pixiManager from "graphics/PixiManager";
-import {Factory} from "./factory/Factory";
-import {ImageLoader} from "./loader/ImageLoader";
+import pixiManager from "abstract/graphics/PixiManager";
+import {Factory} from "./abstract/factory/Factory";
+import {ImageLoader} from "./abstract/loader/ImageLoader";
 
 class Main {
 

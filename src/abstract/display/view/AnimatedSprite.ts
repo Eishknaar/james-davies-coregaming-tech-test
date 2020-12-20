@@ -1,6 +1,6 @@
 import {Sprite} from "./Sprite";
 import {AnimatedSpriteProperties} from "../properties/AnimatedSpriteProperties";
-import {AbstractViewProperties} from "../../abstract/AbstractViewProperties";
+import {AbstractViewProperties} from "../properties/AbstractViewProperties";
 
 export class AnimatedSprite extends Sprite {
 

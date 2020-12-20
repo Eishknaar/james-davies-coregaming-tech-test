@@ -1,5 +1,5 @@
-import {AbstractViewProperties} from "../../abstract/AbstractViewProperties";
-import {PanelProperties} from "../../tools/properties/PanelProperties";
+import {AbstractViewProperties} from "../../abstract/display/properties/AbstractViewProperties";
+import {PanelProperties} from "../../abstract/display/properties/PanelProperties";
 
 export class ReelViewProperties extends AbstractViewProperties {
 

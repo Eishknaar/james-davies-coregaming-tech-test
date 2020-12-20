@@ -1,7 +1,7 @@
-import {AbstractGameView} from "../../abstract/AbstractGameView";
+import {AbstractGameView} from "../../abstract/display/view/AbstractGameView";
 import {ReelDisplayViewProperties} from "../properties/ReelDisplayViewProperties";
-import {AbstractViewProperties} from "../../abstract/AbstractViewProperties";
-import {Panel} from "../../tools/view/Panel";
+import {AbstractViewProperties} from "../../abstract/display/properties/AbstractViewProperties";
+import {Panel} from "../../abstract/display/view/Panel";
 import {ReelView} from "./ReelView";
 
 export class ReelDisplayView extends AbstractGameView {

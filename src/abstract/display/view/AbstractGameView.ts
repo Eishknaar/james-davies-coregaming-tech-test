@@ -1,7 +1,7 @@
-import {AbstractViewProperties} from "./AbstractViewProperties";
+import {AbstractViewProperties} from "../properties/AbstractViewProperties";
 import {AbstractView} from "./AbstractView";
-import {Factory} from "../factory/Factory";
-import {Model} from "../model/Model";
+import {Factory} from "../../factory/Factory";
+import {Model} from "../../model/Model";
 
 export class AbstractGameView extends AbstractView {
 

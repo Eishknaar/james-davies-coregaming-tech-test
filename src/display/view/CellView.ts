@@ -1,7 +1,7 @@
-import {AbstractGameView} from "../../abstract/AbstractGameView";
-import {AbstractViewProperties} from "../../abstract/AbstractViewProperties";
+import {AbstractGameView} from "../../abstract/display/view/AbstractGameView";
+import {AbstractViewProperties} from "../../abstract/display/properties/AbstractViewProperties";
 import {CellViewProperties} from "../properties/CellViewProperties";
-import {AnimatedSprite} from "../../tools/view/AnimatedSprite";
+import {AnimatedSprite} from "../../abstract/display/view/AnimatedSprite";
 
 export class CellView extends AbstractGameView {
 

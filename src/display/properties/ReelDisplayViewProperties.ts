@@ -1,7 +1,7 @@
-import {AbstractViewProperties} from "../../abstract/AbstractViewProperties";
-import {SpriteProperties} from "../../tools/properties/SpriteProperties";
+import {AbstractViewProperties} from "../../abstract/display/properties/AbstractViewProperties";
+import {SpriteProperties} from "../../abstract/display/properties/SpriteProperties";
 import {GameStyle} from "../../style/GameStyle";
-import {PanelProperties} from "../../tools/properties/PanelProperties";
+import {PanelProperties} from "../../abstract/display/properties/PanelProperties";
 
 export class ReelDisplayViewProperties extends AbstractViewProperties {
 
