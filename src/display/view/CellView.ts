@@ -25,6 +25,7 @@ export class CellView extends AbstractGameView {
 
     protected createSpinAnim(): void {
         let anim: AnimatedSprite = new AnimatedSprite(this.properties.animatedSpriteProperties);
+        anim.setAnimationSpeed(0.25)
         this.addChild(anim);
         anim.play();
     }
