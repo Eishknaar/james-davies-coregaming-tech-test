@@ -1,6 +1,6 @@
 {"frames": {
 
-"apple.png":
+"reelSymbol0001.png":
 {
 	"frame": {"x":0,"y":0,"w":200,"h":200},
 	"rotated": false,
@@ -8,7 +8,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
 	"sourceSize": {"w":200,"h":200}
 },
-"banana.png":
+"reelSymbol0002.png":
 {
 	"frame": {"x":200,"y":0,"w":200,"h":200},
 	"rotated": false,
@@ -16,7 +16,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
 	"sourceSize": {"w":200,"h":200}
 },
-"cherry.png":
+"reelSymbol0003.png":
 {
 	"frame": {"x":400,"y":0,"w":200,"h":200},
 	"rotated": false,
@@ -121,6 +121,7 @@
 	"sourceSize": {"w":200,"h":200}
 }},
 "animations": {
+	"reelSymbol": ["reelSymbol0001.png","reelSymbol0002.png","reelSymbol0003.png"],
 	"sequence": ["sequence0001.png","sequence0002.png","sequence0003.png","sequence0004.png","sequence0005.png","sequence0006.png"],
 	"spinAnimation": ["spinAnimation0001.png","spinAnimation0002.png","spinAnimation0003.png","spinAnimation0004.png","spinAnimation0005.png","spinAnimation0006.png"]
 },
@@ -131,6 +132,6 @@
 	"format": "RGBA8888",
 	"size": {"w":1736,"h":456},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:2d1a17150b1344fbf43ae3eb6bb4efb1:86eed3b8347d87cbfa59f1c4890ea093:729adc6043343cfda41c447ce8f464d6$"
+	"smartupdate": "$TexturePacker:SmartUpdate:93be7a20add180bf895626141ccb8431:fc82f011ea601a7153f3a5f4e8ef99d6:729adc6043343cfda41c447ce8f464d6$"
 }
 }

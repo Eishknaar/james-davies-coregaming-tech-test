@@ -17,7 +17,7 @@ export class ReelDisplayViewProperties extends AbstractViewProperties {
     protected setDefaultValues(): void {
         this.numberOfReels = 3;
         this.panelProperties = new PanelProperties(1, 3, 5, 5);
-        this.spriteProperties = new SpriteProperties(GameStyle.BANANA);
+        // this.spriteProperties = new SpriteProperties(GameStyle.BANANA);
     }
 
 }

@@ -1,7 +1,6 @@
 export class GameStyle {
 
-    public static BANANA: string = "banana";
-    public static SEQUENCE: string = "sequence";
+    public static REEL_SYMBOL: string = "reelSymbol";
     public static SPIN_ANIMATION: string = "spinAnimation";
 
 }

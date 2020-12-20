@@ -14,7 +14,7 @@ export class CellViewProperties extends AbstractViewProperties {
     }
 
     protected setDefaultValues(): void {
-        this.symbolProperties = new SpriteProperties(GameStyle.BANANA);
+        this.symbolProperties = new SpriteProperties(GameStyle.REEL_SYMBOL);
         this.animatedSpriteProperties = new AnimatedSpriteProperties(GameStyle.SPIN_ANIMATION, 6, true);
     }
 

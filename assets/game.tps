@@ -181,9 +181,15 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">images/apple.png</key>
-            <key type="filename">images/banana.png</key>
-            <key type="filename">images/cherry.png</key>
+            <key type="filename">images/reelSymbol0001.png</key>
+            <key type="filename">images/reelSymbol0002.png</key>
+            <key type="filename">images/reelSymbol0003.png</key>
+            <key type="filename">images/spinAnimation0001.png</key>
+            <key type="filename">images/spinAnimation0002.png</key>
+            <key type="filename">images/spinAnimation0003.png</key>
+            <key type="filename">images/spinAnimation0004.png</key>
+            <key type="filename">images/spinAnimation0005.png</key>
+            <key type="filename">images/spinAnimation0006.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -192,9 +198,9 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>25,25,50,50</rect>
+                <rect>50,50,100,100</rect>
                 <key>scale9Paddings</key>
-                <rect>25,25,50,50</rect>
+                <rect>50,50,100,100</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -215,26 +221,6 @@
                 <rect>64,64,128,128</rect>
                 <key>scale9Paddings</key>
                 <rect>64,64,128,128</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">images/spinAnimation0001.png</key>
-            <key type="filename">images/spinAnimation0002.png</key>
-            <key type="filename">images/spinAnimation0003.png</key>
-            <key type="filename">images/spinAnimation0004.png</key>
-            <key type="filename">images/spinAnimation0005.png</key>
-            <key type="filename">images/spinAnimation0006.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>50,50,100,100</rect>
-                <key>scale9Paddings</key>
-                <rect>50,50,100,100</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>

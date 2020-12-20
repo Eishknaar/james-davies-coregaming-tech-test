@@ -1,12 +1,13 @@
 import {AbstractGameView} from "../../abstract/AbstractGameView";
 import {AbstractViewProperties} from "../../abstract/AbstractViewProperties";
 import {CellViewProperties} from "../properties/CellViewProperties";
-import {Sprite} from "../../tools/view/Sprite";
 import {AnimatedSprite} from "../../tools/view/AnimatedSprite";
 
 export class CellView extends AbstractGameView {
 
     protected properties: CellViewProperties;
+    protected spinAnimation: AnimatedSprite;
+    protected symbol: AnimatedSprite;
 
     protected createProperties(properties:AbstractViewProperties): void {
         super.createProperties(properties);
@@ -19,14 +20,12 @@ export class CellView extends AbstractGameView {
     }
 
     protected createSymbol(): void {
-        let symbol: Sprite = new Sprite(this.properties.symbolProperties);
-        // this.addChild(symbol);
+        this.symbol= new AnimatedSprite(this.properties.symbolProperties);
+        this.addChild(this.symbol);
     }
 
     protected createSpinAnim(): void {
-        let anim: AnimatedSprite = new AnimatedSprite(this.properties.animatedSpriteProperties);
-        anim.setAnimationSpeed(0.2)
-        this.addChild(anim);
-        anim.play();
+        this.spinAnimation = new AnimatedSprite(this.properties.animatedSpriteProperties);
+        this.spinAnimation.setAnimationSpeed(0.2)
     }
 }
