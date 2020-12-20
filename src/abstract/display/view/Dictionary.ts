@@ -1,13 +1,13 @@
-export class Dictionary <V, K> {
-    protected values: V[];
+export class Dictionary <K, V> {
     protected keys: K[];
+    protected values: V[];
 
     constructor() {
         this.values = [];
         this.keys = [];
     }
 
-    public set(value: V, key: K): void {
+    public set(key: K, value: V): void {
         let index: number = this.keys.indexOf(key);
         if(index == -1) {
             this.values.push(value);
