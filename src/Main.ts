@@ -27,7 +27,7 @@ class Main {
     }
 
     protected createReelDisplay(): void {
-        let reelDisplay = this.factory.createReelDisplay(new PIXI.Point(5, 5));
+        let reelDisplay = this.factory.createReelDisplay();
         this.addComponent(reelDisplay);
     }
 

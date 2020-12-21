@@ -1,23 +1,24 @@
 import {AbstractViewProperties} from "../../abstract/display/properties/AbstractViewProperties";
-import {SpriteProperties} from "../../abstract/display/properties/SpriteProperties";
-import {GameStyle} from "../../style/GameStyle";
 import {PanelProperties} from "../../abstract/display/properties/PanelProperties";
 
 export class ReelDisplayViewProperties extends AbstractViewProperties {
 
     public numberOfReels: number
     public panelProperties: PanelProperties
-    public spriteProperties: SpriteProperties
+    public spinDelay: number
+    public stopDelay: number
 
-    constructor(position: PIXI.Point){
-        super(position);
+    constructor(){
+        super();
         this.setDefaultValues();
     }
 
     protected setDefaultValues(): void {
+        this.position = new PIXI.Point(5, 5,);
         this.numberOfReels = 3;
         this.panelProperties = new PanelProperties(1, 3, 5, 5);
-        // this.spriteProperties = new SpriteProperties(GameStyle.BANANA);
+        this.spinDelay = 500;
+        this.stopDelay = 1000;
     }
 
 }

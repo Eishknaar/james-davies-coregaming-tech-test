@@ -9,6 +9,7 @@ export class Model{
 
     constructor(){
         this.eventHandler = new EventEmitter();
+        this.setResultData(new ResultData({data: "data"}));
     }
 
     public setResultData(data: ResultData): void {

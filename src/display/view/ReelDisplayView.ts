@@ -55,19 +55,36 @@ export class ReelDisplayView extends AbstractGameView {
     }
 
     protected spinReels(): void {
-        for(let reel of this.reels){
-            reel.spin();
+        let delay: number = 0;
+        for(let i: number = 0; i < this.reels.length; i++){
+            this.callAfter(delay, this.spinReel, this, i);
+            delay += this.properties.spinDelay;
         }
+        delay += this.properties.stopDelay;
+        this.callAfter(delay, this.stopReels, this);
+
+    }
+
+    public spinReel(index: number): void {
+        let reel: ReelView = this.reels[index];
+        reel.spin();
     }
 
     protected stopReels(): void {
+        let delay: number = 0;
+        for(let i: number = 0; i < this.reels.length; i++){
+            this.callAfter(delay, this.stopReel, this, i);
+            delay += this.properties.spinDelay;
+        }
+    }
+
+    protected stopReel(args: any[]): void {
+        let index: number = args[0];
+        let reel: ReelView = this.reels[index];
         let resultData: ResultData = this.model.getResultData();
         let reelData: Dictionary<number, number[]> = resultData.getReelData();
-        for(let i: number = 0; i < this.reels.length; i++){
-            let reel: ReelView = this.reels[i];
-            let result: number[] = reelData.getValue(i);
-            reel.stop(result);
-        }
+        let symbols: number[] = reelData.getValue(index);
+        reel.stop(symbols);
     }
 
     public handleSpin(): void {

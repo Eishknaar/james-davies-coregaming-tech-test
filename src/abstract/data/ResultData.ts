@@ -8,8 +8,8 @@ export class ResultData {
     private stake: number
     private win: number
 
-    constructor(){
-
+    constructor(data: any){
+        this.update(data);
     }
 
     public update(data: any){

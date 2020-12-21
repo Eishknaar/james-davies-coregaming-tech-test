@@ -20,8 +20,8 @@ export class Factory {
         return new ControlPanelView(this, new ControlPanelViewProperties());
     }
 
-    public createReelDisplay(position: PIXI.Point): ReelDisplayView {
-        return new ReelDisplayView(this, new ReelDisplayViewProperties(position));
+    public createReelDisplay(): ReelDisplayView {
+        return new ReelDisplayView(this, new ReelDisplayViewProperties());
     }
 
     public createReel(): ReelView {
