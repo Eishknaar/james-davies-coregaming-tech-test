@@ -2,6 +2,7 @@ import {AbstractGameView} from "../../abstract/display/view/AbstractGameView";
 import {AbstractViewProperties} from "../../abstract/display/properties/AbstractViewProperties";
 import {ControlPanelViewProperties} from "../properties/ControlPanelViewProperties";
 import {Button} from "../../abstract/display/view/Button";
+import {EventStyle} from "../../style/EventStyle";
 
 export class ControlPanelView extends AbstractGameView {
 
@@ -25,7 +26,7 @@ export class ControlPanelView extends AbstractGameView {
     }
 
     public handleSpin(): void {
-        console.log("Stop hitting me!")
+        this.dispatchEvent(EventStyle.SPIN);
     }
 
 }

@@ -17,6 +17,7 @@ export class ReelView extends AbstractGameView {
     }
 
     protected create(): void {
+        super.create();
         this.createPanel();
         this.createCells();
     }
@@ -38,6 +39,20 @@ export class ReelView extends AbstractGameView {
         let cell: CellView = this.factory.createCell();
         this.cells.push(cell);
         this.panel.addToPanel(cell);
+    }
+
+    public spin(): void {
+        for(let cell of this.cells){
+            cell.spin();
+        }
+    }
+
+    public stop(symbols: number[]): void {
+        for(let i: number = 0; i < this.cells.length; i++){
+            let cell: CellView = this.cells[i];
+            let symbol: number = symbols[i];
+            cell.stop(symbol);
+        }
     }
 
 }

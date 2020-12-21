@@ -15,6 +15,7 @@ export class CellView extends AbstractGameView {
     }
 
     protected create(): void {
+        super.create();
         this.createSymbol();
         this.createSpinAnim();
     }
@@ -27,5 +28,21 @@ export class CellView extends AbstractGameView {
     protected createSpinAnim(): void {
         this.spinAnimation = new AnimatedSprite(this.properties.animatedSpriteProperties);
         this.spinAnimation.setAnimationSpeed(0.2)
+        this.spinAnimation.visible = false;
+        this.addChild(this.spinAnimation);
     }
+
+    public spin(): void {
+        this.symbol.visible = false;
+        this.spinAnimation.visible = true;
+        this.spinAnimation.play();
+    }
+
+    public stop(symbol: number): void {
+        this.symbol.gotoAndStop(symbol);
+        this.symbol.visible = true;
+        this.spinAnimation.visible = false;
+    }
+
+
 }
