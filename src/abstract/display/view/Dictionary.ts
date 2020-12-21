@@ -20,7 +20,12 @@ export class Dictionary <K, V> {
 
     public getValue(key: K): V {
         let index: number = this.keys.indexOf(key);
-        return this.values[index];
+        if(index != -1) {
+            return this.values[index];
+        }
+        else{
+            throw new Error("Dictionary does not contain key '" + key + "'");
+        }
     }
 
     public getValues(): V[] {
