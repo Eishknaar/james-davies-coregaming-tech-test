@@ -5,6 +5,8 @@ import {ReelViewProperties} from "../../display/properties/ReelViewProperties";
 import {CellView} from "../../display/view/CellView";
 import {CellViewProperties} from "../../display/properties/CellViewProperties";
 import {Model} from "../model/Model";
+import {ControlPanelView} from "../../display/view/ControlPanelView";
+import {ControlPanelViewProperties} from "../../display/properties/ControlPanelViewProperties";
 
 export class Factory {
 
@@ -12,6 +14,10 @@ export class Factory {
 
     constructor(){
         this.model = new Model();
+    }
+
+    public createControlPanel(): ControlPanelView {
+        return new ControlPanelView(this, new ControlPanelViewProperties());
     }
 
     public createReelDisplay(position: PIXI.Point): ReelDisplayView {

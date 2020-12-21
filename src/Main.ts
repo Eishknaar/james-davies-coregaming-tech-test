@@ -23,11 +23,17 @@ class Main {
 
     protected create(): void {
         this.createReelDisplay();
+        this.createControlPanel();
     }
 
     protected createReelDisplay(): void {
         let reelDisplay = this.factory.createReelDisplay(new PIXI.Point(5, 5));
         this.addComponent(reelDisplay);
+    }
+
+    protected createControlPanel(): void {
+        let controlPanel = this.factory.createControlPanel();
+        this.addComponent(controlPanel);
     }
 
     protected addComponent(component: PIXI.DisplayObject): void {
