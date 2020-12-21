@@ -40,4 +40,11 @@ export class AbstractGameView extends AbstractView {
         this.model.dispatchEvent(event);
     }
 
+
+    protected callAfter(delay: number, handler: Function, scope: any, ...args: any): void {
+        setTimeout(() => {
+            handler.call(scope, args)
+        }, delay);
+    }
+
 }
