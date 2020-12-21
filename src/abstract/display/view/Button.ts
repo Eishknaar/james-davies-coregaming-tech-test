@@ -13,7 +13,7 @@ export class Button extends Sprite {
     private isDown: boolean
     private isOver: boolean;
 
-    constructor(properties: ButtonProperties, handler: Function, scope: Object) {
+    constructor(properties: ButtonProperties, handler: Function, scope: any) {
         super(properties);
         this.clickHandler = handler;
         this.clickHandlerScope = scope;
