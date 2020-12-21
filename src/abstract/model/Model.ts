@@ -1,12 +1,14 @@
 import {ResultData} from "../data/ResultData";
+import { EventEmitter } from 'events';
 
 export class Model{
 
+    private eventHandler: EventEmitter;
     private resultData: ResultData;
     private spinsRemaining: number;
 
     constructor(){
-
+        this.eventHandler = new EventEmitter();
     }
 
     public setResultData(data: ResultData): void {
@@ -27,6 +29,16 @@ export class Model{
 
     public decrementSpins(): void {
         this.spinsRemaining--;
+    }
+
+    public addEventListener(event: string, handler: Function, scope: any): void {
+        this.eventHandler.addListener(event, () => {
+            handler.call(scope);
+        })
+    }
+
+    public dispatchEvent(event: string): void {
+        this.eventHandler.emit(event);
     }
 
 }
