@@ -13,7 +13,8 @@ export class Button extends AbstractGameView {
 
     private clickHandler: Function;
     private clickHandlerScope: any;
-    private isDown: boolean
+    private isEnabled: boolean;
+    private isDown: boolean;
     private isOver: boolean;
 
     constructor(factory: Factory, properties: ButtonProperties, handler: Function, scope: any) {
@@ -25,6 +26,13 @@ export class Button extends AbstractGameView {
     protected createProperties(properties: AbstractViewProperties) {
         super.createProperties(properties);
         this.properties = <ButtonProperties>properties;
+    }
+
+    protected initialise() {
+        super.initialise();
+        this.isEnabled = true;
+        this.isOver = false;
+        this.isDown = false;
     }
 
     protected create(): void {
@@ -72,26 +80,44 @@ export class Button extends AbstractGameView {
 
     protected onButtonUp(): void {
         if (this.isOver && this.isDown) {
-            this.isDown = false;
             this.sprite.gotoAndStop(0);
             this.onClick();
         }
+        this.isDown = false;
     }
 
     protected onButtonOver(): void {
-        this.isOver = true;
-        this.sprite.gotoAndStop(1);
+        if(this.isEnabled) {
+            this.isOver = true;
+            this.sprite.gotoAndStop(1);
+        }
     }
 
     protected onButtonOut(): void {
-        this.isOver = false;
-        this.sprite.gotoAndStop(0);
+        if(this.isEnabled) {
+            this.isOver = false;
+            this.sprite.gotoAndStop(0);
+        }
     }
 
     private onClick(): void {
         if (this.clickHandler != null) {
             this.clickHandler.call(this.clickHandlerScope);
         }
+    }
+
+    public disable(): void {
+        this.isOver = false;
+        this.isDown = false;
+        this.isEnabled = false;
+        this.interactive = false;
+        this.sprite.gotoAndStop(3);
+    }
+
+    public enable(): void {
+        this.isEnabled = true;
+        this.interactive = true;
+        this.sprite.gotoAndStop(0);
     }
 
     public destroy(): void {

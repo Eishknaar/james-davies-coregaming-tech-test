@@ -76,6 +76,7 @@ export class ReelDisplayView extends AbstractGameView {
             this.callAfter(delay, this.stopReel, this, i);
             delay += this.properties.spinDelay;
         }
+        this.callAfter(delay, this.reelsComplete, this);
     }
 
     protected stopReel(args: any[]): void {
@@ -89,6 +90,10 @@ export class ReelDisplayView extends AbstractGameView {
 
     public handleSpin(): void {
         this.spinReels();
+    }
+
+    public reelsComplete(): void {
+        this.dispatchEvent(EventStyle.REELS_LANDED);
     }
 
 }
