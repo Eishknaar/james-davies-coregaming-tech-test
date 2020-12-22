@@ -1,14 +1,18 @@
 import {ResultData} from "../data/ResultData";
 import { EventEmitter } from 'events';
+import {FontMap} from "../../font/FontMap";
+import {Font} from "../font/Font";
 
 export class Model{
 
     private eventHandler: EventEmitter;
+    private fontMap: FontMap;
     private resultData: ResultData;
     private spinsRemaining: number;
 
     constructor(){
         this.eventHandler = new EventEmitter();
+        this.fontMap = new FontMap();
         this.setResultData(new ResultData({data: "data"}));
     }
 
@@ -40,6 +44,10 @@ export class Model{
 
     public dispatchEvent(event: string): void {
         this.eventHandler.emit(event);
+    }
+
+    public getFont(fontStyle: string): Font {
+        return this.fontMap.getFont(fontStyle);
     }
 
 }
