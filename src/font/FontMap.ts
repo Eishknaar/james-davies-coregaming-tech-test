@@ -10,6 +10,7 @@ export class FontMap extends AbstractFontMap{
 
     protected createFontMaps(): void {
         this.addStyle(FontStyle.SPIN_BUTTON, FontMap.TAHOMA, 25, FontColours.RED).addStroke(FontStrokes.YELLOW_2).addDropShadow(FontDropShadows.BLUE_5_90);
+        this.addStyle(FontStyle.PLAYER_INFO, FontMap.TAHOMA, 25, FontColours.WHITE);
     }
 
 

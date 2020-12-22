@@ -7,6 +7,8 @@ import {CellViewProperties} from "../../display/properties/CellViewProperties";
 import {Model} from "../model/Model";
 import {ControlPanelView} from "../../display/view/ControlPanelView";
 import {ControlPanelViewProperties} from "../../display/properties/ControlPanelViewProperties";
+import {PlayerInfoView} from "../../display/view/PlayerInfoView";
+import {PlayerInfoViewProperties} from "../../display/properties/PlayerInfoViewProperties";
 
 export class Factory {
 
@@ -30,6 +32,10 @@ export class Factory {
 
     public createCell(): CellView {
         return new CellView(this, new CellViewProperties());
+    }
+
+    public createPlayerInfo(): PlayerInfoView {
+        return new PlayerInfoView(this, new PlayerInfoViewProperties());
     }
 
     public getModel(): Model {

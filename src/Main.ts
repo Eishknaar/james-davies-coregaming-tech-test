@@ -24,6 +24,7 @@ class Main {
     protected create(): void {
         this.createReelDisplay();
         this.createControlPanel();
+        this.createPlayerInfo();
     }
 
     protected createReelDisplay(): void {
@@ -34,6 +35,11 @@ class Main {
     protected createControlPanel(): void {
         let controlPanel = this.factory.createControlPanel();
         this.addComponent(controlPanel);
+    }
+
+    protected createPlayerInfo(): void {
+        let playerInfo = this.factory.createPlayerInfo();
+        this.addComponent(playerInfo);
     }
 
     protected addComponent(component: PIXI.DisplayObject): void {
