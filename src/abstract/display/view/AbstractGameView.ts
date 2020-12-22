@@ -46,4 +46,8 @@ export class AbstractGameView extends AbstractView {
         }, delay);
     }
 
+    protected formatCurrency(value: number): string {
+        return "£" + value.toFixed(2);
+    }
+
 }
