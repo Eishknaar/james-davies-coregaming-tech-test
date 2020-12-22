@@ -29,6 +29,7 @@ export class TextField extends AbstractGameView {
         this.createBoundingBox();
         this.createStyle();
         this.createText();
+        this.updateAnchors();
         this.updateAlign();
     }
 
@@ -52,6 +53,39 @@ export class TextField extends AbstractGameView {
     protected createText(): void {
         this.field = new PIXI.Text(this.properties.lang, this.style);
         this.addChild(this.field);
+    }
+
+    protected updateAnchors(): void {
+        let pivot: PIXI.Point = new PIXI.Point(0, 0);
+        switch (this.properties.horizontalAlign) {
+            case AlignConstants.LEFT:
+                pivot.x = 0;
+                break;
+            case AlignConstants.CENTER:
+                pivot.x = 0.5 * this.boundingBox.width;
+                break;
+            case AlignConstants.RIGHT:
+                pivot.x = 1 * this.boundingBox.width;
+                break;
+            default:
+                throw new Error("Did not recognise horizontal align type of '" + this.properties.horizontalAlign + "'");
+        }
+
+        switch (this.properties.verticalAlign) {
+            case AlignConstants.TOP:
+                pivot.y = 0;
+                break;
+            case AlignConstants.CENTER:
+                pivot.y = 0.5 * this.boundingBox.height;
+                break;
+            case AlignConstants.BOTTOM:
+                pivot.y = 1 * this.boundingBox.height;
+                break;
+            default:
+                throw new Error("Did not recognise vertical align type of '" + this.properties.verticalAlign + "'");
+        }
+        this.boundingBox.pivot = pivot;
+        this.field.pivot = pivot;
     }
 
     protected updateAlign(): void {
@@ -85,7 +119,6 @@ export class TextField extends AbstractGameView {
             default:
                 throw new Error("Did not recognise vertical align type of '" + this.properties.verticalAlign + "'");
         }
-
         this.field.position = offset;
     }
 

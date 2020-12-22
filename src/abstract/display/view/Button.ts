@@ -3,6 +3,8 @@ import {Factory} from "../../factory/Factory";
 import {AbstractViewProperties} from "../properties/AbstractViewProperties";
 import {ButtonProperties} from "../properties/ButtonProperties";
 import {TextField} from "./TextField";
+import {TextFieldProperties} from "../properties/TextFieldProperties";
+import {AlignConstants} from "../../constants/AlignConstants";
 
 export class Button extends AbstractGameView {
 
@@ -57,6 +59,7 @@ export class Button extends AbstractGameView {
         if(this.properties.textFieldProperties) {
             this.properties.textFieldProperties.setDebug(this.properties.debug);
             this.properties.textFieldProperties.size = new PIXI.Point(this.sprite.width, this.sprite.height);
+            this.setFieldPosition(this.properties.textFieldProperties);
             this.textField = new TextField(this.factory, this.properties.textFieldProperties);
             this.addChild(this.textField);
         }
@@ -69,6 +72,30 @@ export class Button extends AbstractGameView {
         this.on('mouseup', () => this.onButtonUp());
         this.on('mouseover', () => this.onButtonOver());
         this.on('mouseout', () => this.onButtonOut());
+    }
+
+    protected setFieldPosition(properties: TextFieldProperties): void {
+        switch(properties.horizontalAlign){
+            case AlignConstants.LEFT:
+                properties.position.x = 0;
+                break;
+            case AlignConstants.CENTER:
+                properties.position.x = this.sprite.width/2;
+                break;
+            case AlignConstants.RIGHT:
+                properties.position.x = this.sprite.width;
+        }
+
+        switch(properties.verticalAlign){
+            case AlignConstants.TOP:
+                properties.position.y = 0;
+                break;
+            case AlignConstants.CENTER:
+                properties.position.y = this.sprite.height/2;
+                break;
+            case AlignConstants.BOTTOM:
+                properties.position.y = this.sprite.height;
+        }
     }
 
     protected onButtonDown(): void {

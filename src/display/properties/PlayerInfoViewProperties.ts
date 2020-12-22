@@ -20,8 +20,8 @@ export class PlayerInfoViewProperties extends AbstractViewProperties {
 
     protected setDefaultValues(): void {
         this.backgroundProperties = new SpriteProperties(GameStyle.NAVIGATION_BAR);
-        this.stakeFieldProperties = new TextFieldProperties(FontStyle.PLAYER_INFO, GameLang.STAKE, new PIXI.Point(150, 40), new PIXI.Point(10, 5));
-        this.balanceFieldProperties = new TextFieldProperties(FontStyle.PLAYER_INFO, GameLang.BALANCE, new PIXI.Point(200, 40), new PIXI.Point(165, 5));
-        this.totalWinFieldProperties = new TextFieldProperties(FontStyle.PLAYER_INFO, GameLang.TOTAL_WIN, new PIXI.Point(350, 40), new PIXI.Point(370, 5));
+        this.stakeFieldProperties = new TextFieldProperties(FontStyle.PLAYER_INFO, GameLang.STAKE, new PIXI.Point(290, 40), new PIXI.Point(10, 25), AlignConstants.LEFT);
+        this.balanceFieldProperties = new TextFieldProperties(FontStyle.PLAYER_INFO, GameLang.BALANCE, new PIXI.Point(290, 40), new PIXI.Point(450, 25));
+        this.totalWinFieldProperties = new TextFieldProperties(FontStyle.PLAYER_INFO, GameLang.TOTAL_WIN, new PIXI.Point(290, 40), new PIXI.Point(890, 25), AlignConstants.RIGHT);
     }
 }
