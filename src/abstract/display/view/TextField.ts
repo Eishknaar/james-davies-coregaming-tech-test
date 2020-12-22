@@ -31,7 +31,7 @@ export class TextField extends AbstractGameView {
         this.boundingBox.beginFill(0xFF0000, 1);
         this.boundingBox.drawRect(0, 0, this.properties.size.x, this.properties.size.y);
         this.boundingBox.endFill();
-        this.boundingBox.visible = true;
+        this.boundingBox.visible = this.properties.debug;
         this.addChild(this.boundingBox);
     }
 
