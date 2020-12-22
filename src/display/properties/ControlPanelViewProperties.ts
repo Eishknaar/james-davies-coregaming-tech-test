@@ -14,7 +14,7 @@ export class ControlPanelViewProperties extends AbstractViewProperties {
     }
 
     protected setDefaultValues(): void {
-        this.spinButtonProperties = new ButtonProperties(GameStyle.SPIN_BUTTON, FontStyle.SPIN_BUTTON, GameLang.SPIN_BUTTON, new PIXI.Point(0, 0));
+        this.spinButtonProperties = new ButtonProperties(GameStyle.SPIN_BUTTON, FontStyle.SPIN_BUTTON, GameLang.SPIN_BUTTON, new PIXI.Point(750, 350));
         this.spinButtonProperties.setDebug(false);
     }
 }

@@ -6,7 +6,7 @@ class PixiManager {
 
     constructor(){
         this.renderer = PIXI.autoDetectRenderer({
-            width: 800,
+            width: 900,
             height: 800,
             transparent: true,
             resolution: 1,
