@@ -3,6 +3,7 @@ import {AbstractViewProperties} from "../../abstract/display/properties/Abstract
 import {ControlPanelViewProperties} from "../properties/ControlPanelViewProperties";
 import {Button} from "../../abstract/display/view/Button";
 import {EventStyle} from "../../style/EventStyle";
+import {TextField} from "../../abstract/display/view/TextField";
 
 export class ControlPanelView extends AbstractGameView {
 
@@ -21,7 +22,7 @@ export class ControlPanelView extends AbstractGameView {
     }
 
     protected createSpinButton(): void {
-        this.spinButton = new Button(this.properties.spinButtonProperties, this.handleSpin, this);
+        this.spinButton = new Button(this.factory, this.properties.spinButtonProperties, this.handleSpin, this);
         this.addChild(this.spinButton);
     }
 

@@ -1,20 +1,23 @@
-import {Sprite} from "./Sprite";
-import {AnimatedSpriteProperties} from "../properties/AnimatedSpriteProperties";
+import {AbstractGameView} from "./AbstractGameView";
+import {Factory} from "../../factory/Factory";
 import {AbstractViewProperties} from "../properties/AbstractViewProperties";
 import {ButtonProperties} from "../properties/ButtonProperties";
+import {TextField} from "./TextField";
 
-export class Button extends Sprite {
+export class Button extends AbstractGameView {
 
     protected properties: ButtonProperties;
+    protected spriteSheet: PIXI.Spritesheet;
     protected sprite: PIXI.extras.AnimatedSprite;
+    protected textField: TextField;
 
     private clickHandler: Function;
     private clickHandlerScope: any;
     private isDown: boolean
     private isOver: boolean;
 
-    constructor(properties: ButtonProperties, handler: Function, scope: any) {
-        super(properties);
+    constructor(factory: Factory, properties: ButtonProperties, handler: Function, scope: any) {
+        super(factory, properties);
         this.clickHandler = handler;
         this.clickHandlerScope = scope;
     }
@@ -26,7 +29,14 @@ export class Button extends Sprite {
 
     protected create(): void {
         super.create();
+        this.createSpriteSheet();
+        this.createSprite();
+        this.createTextField();
         this.createInteraction();
+    }
+
+    protected createSpriteSheet(): void {
+        this.spriteSheet = PIXI.loader.resources["spritesheet/spritesheet.json"].spritesheet;
     }
 
     protected createSprite(): void {
@@ -35,6 +45,14 @@ export class Button extends Sprite {
         this.addChild(this.sprite);
     }
 
+    protected createTextField(): void {
+        if(this.properties.textFieldProperties) {
+            this.properties.textFieldProperties.setDebug(this.properties.debug);
+            this.properties.textFieldProperties.size = new PIXI.Point(this.sprite.width, this.sprite.height);
+            this.textField = new TextField(this.factory, this.properties.textFieldProperties);
+            this.addChild(this.textField);
+        }
+    }
 
     protected createInteraction(): void {
         this.buttonMode = true;

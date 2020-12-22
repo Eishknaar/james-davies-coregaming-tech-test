@@ -4,7 +4,7 @@ import {FontDropShadow} from "./FontDropShadow";
 
 export class Font {
 
-    private options: PIXI.TextStyleOptions;
+    private style: PIXI.TextStyle;
 
     private font: string;
     private size: number;
@@ -23,7 +23,7 @@ export class Font {
         this.gradient = colour.getGradient();
         this.capitalisation = isCaps ? "small-caps" : "normal";
         this.initialise();
-        this.createOptions();
+        this.createStyle();
     }
 
     protected initialise(): void {
@@ -32,8 +32,8 @@ export class Font {
         this.trim = false;
     }
 
-    protected createOptions(): void {
-        this.options = {
+    protected createStyle(): void {
+        this.style = new PIXI.TextStyle({
             fill: this.colours,
             fillGradientType: this.gradient,
             fontFamily: this.font,
@@ -45,28 +45,28 @@ export class Font {
             textBaseline: "alphabetic",
             padding: this.padding,
             trim: this.trim
-        };
+        });
     }
 
     public addStroke(stroke: FontStroke): Font {
-        this.options.stroke = stroke.getColour();
-        this.options.strokeThickness = stroke.getThickness();
-        this.options.lineJoin = stroke.getLineJoin();
-        this.options.miterLimit = stroke.getMiterLimit();
+        this.style.stroke = stroke.getColour();
+        this.style.strokeThickness = stroke.getThickness();
+        this.style.lineJoin = stroke.getLineJoin();
+        this.style.miterLimit = stroke.getMiterLimit();
         return this;
     }
 
     public addDropShadow(shadow: FontDropShadow): Font {
-        this.options.dropShadow = true;
-        this.options.dropShadowAngle = shadow.getAngle();
-        this.options.dropShadowBlur = shadow.getBlur();
-        this.options.dropShadowColor = shadow.getColor();
-        this.options.dropShadowDistance = shadow.getDistance();
+        this.style.dropShadow = true;
+        this.style.dropShadowAngle = shadow.getAngle();
+        this.style.dropShadowBlur = shadow.getBlur();
+        this.style.dropShadowColor = shadow.getColor();
+        this.style.dropShadowDistance = shadow.getDistance();
         return this;
     }
 
-    public getOptions(): PIXI.TextStyleOptions {
-        return this.options;
+    public getStyle(): PIXI.TextStyle {
+        return this.style;
     }
 
 }

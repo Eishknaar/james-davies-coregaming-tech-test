@@ -11,7 +11,6 @@ export class TextField extends AbstractGameView {
     protected boundingBox: PIXI.Graphics;
     protected text: PIXI.Text;
     protected style: PIXI.TextStyle;
-    protected options: PIXI.TextStyleOptions;
 
     protected createProperties(properties: AbstractViewProperties) {
         super.createProperties(properties);
@@ -19,8 +18,8 @@ export class TextField extends AbstractGameView {
     }
 
     protected create(): void {
+        super.create();
         this.createBoundingBox();
-        this.createOptions();
         this.createStyle();
         this.createText();
         this.updateAlign();
@@ -35,20 +34,16 @@ export class TextField extends AbstractGameView {
         this.addChild(this.boundingBox);
     }
 
-    protected createOptions(): void {
+    protected createStyle(): void {
         let font: Font = this.model.getFont(this.properties.fontStyle);
-        this.options = font.getOptions();
+        this.style = font.getStyle();
         if(this.properties.multiline){
             this.setMultiline(this.properties.size.x, this.properties.horizontalAlign, 1, this.properties.leading);
         }
     }
 
-    protected createStyle(): void {
-        this.style = new PIXI.TextStyle(this.options);
-    }
-
     protected createText(): void {
-        this.text = new PIXI.Text(this.properties.lang, this.options);
+        this.text = new PIXI.Text(this.properties.lang, this.style);
         this.addChild(this.text);
     }
 
@@ -90,12 +85,12 @@ export class TextField extends AbstractGameView {
     }
 
     protected setMultiline(wrapWidth: number, align: string, lineHeight: number, leading: number): void {
-        this.options.wordWrap = true;
-        this.options.wordWrapWidth = wrapWidth;
-        this.options.whiteSpace = "normal";
-        this.options.align = align;
-        this.options.lineHeight = lineHeight;
-        this.options.leading = leading;
+        this.style.wordWrap = true;
+        this.style.wordWrapWidth = wrapWidth;
+        this.style.whiteSpace = "normal";
+        this.style.align = align;
+        this.style.lineHeight = lineHeight;
+        this.style.leading = leading;
     }
 
     public setText(lang: string): void {

@@ -5,10 +5,11 @@ class PixiManager {
     public stage: PIXI.Container;
 
     constructor(){
-        this.renderer = PIXI.autoDetectRenderer(800, 800, {
+        this.renderer = PIXI.autoDetectRenderer({
+            width: 800,
+            height: 800,
             transparent: true,
             resolution: 1,
-            roundPixels: false,
             antialias: true
         });
 

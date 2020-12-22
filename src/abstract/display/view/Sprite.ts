@@ -1,6 +1,7 @@
 import {AbstractView} from "./AbstractView";
 import {SpriteProperties} from "../properties/SpriteProperties";
 import {AbstractViewProperties} from "../properties/AbstractViewProperties";
+import {Factory} from "../../factory/Factory";
 
 export class Sprite extends AbstractView {
 
@@ -9,7 +10,7 @@ export class Sprite extends AbstractView {
     protected spriteSheet: PIXI.Spritesheet;
     protected sprite: PIXI.Sprite;
 
-    constructor(properties: AbstractViewProperties){
+    constructor(properties: AbstractViewProperties) {
         super(properties);
         this.create();
     }
