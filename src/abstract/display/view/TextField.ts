@@ -144,8 +144,8 @@ export class TextField extends AbstractGameView {
     }
 
     public setDynamicText(keyValuePair: KeyValuePair<string, string>, update?: boolean): void {
-        this.lang = this.lang.replace(keyValuePair.getKey(), keyValuePair.getValue());
-        this.field.text = this.lang;
+        let text: string = this.lang.replace(keyValuePair.getKey(), keyValuePair.getValue());
+        this.field.text = text;
         if(update){
             this.updateAlign();
         }
