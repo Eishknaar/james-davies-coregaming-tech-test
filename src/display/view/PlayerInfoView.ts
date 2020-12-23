@@ -5,6 +5,7 @@ import {Sprite} from "../../abstract/display/view/Sprite";
 import {TextField} from "../../abstract/display/view/TextField";
 import {KeyValuePair} from "../../abstract/display/view/KeyValuePair";
 import {GameLang} from "../../style/GameLang";
+import {EventStyle} from "../../style/EventStyle";
 
 export class PlayerInfoView extends AbstractGameView {
 
@@ -18,6 +19,11 @@ export class PlayerInfoView extends AbstractGameView {
     protected createProperties(properties: AbstractViewProperties) {
         super.createProperties(properties);
         this.properties = <PlayerInfoViewProperties> properties;
+    }
+
+    protected addEventListeners() {
+        super.addEventListeners();
+        this.addEventListener(EventStyle.STAKE_UPDATED, this.handleStakeUpdated, this);
     }
 
     protected create() {
@@ -44,6 +50,10 @@ export class PlayerInfoView extends AbstractGameView {
         let field: TextField = new TextField(this.factory, properties);
         this.addChild(field);
         return field;
+    }
+
+    public handleStakeUpdated(): void {
+        this.updateField(this.stakeField, this.model.getStake());
     }
 
     public updateField(field: TextField, amount: number): void {

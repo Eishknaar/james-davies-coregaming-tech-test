@@ -60,6 +60,7 @@ export class ControlPanelView extends AbstractGameView {
     public handleOptionSelected(button: Button): void {
         let stake: number = button.data;
         this.model.setStake(stake);
+        this.dispatchEvent(EventStyle.STAKE_UPDATED);
     }
 
     public handleReelsLanded(): void {
