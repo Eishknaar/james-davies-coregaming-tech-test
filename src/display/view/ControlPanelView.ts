@@ -3,12 +3,14 @@ import {AbstractViewProperties} from "../../abstract/display/properties/Abstract
 import {ControlPanelViewProperties} from "../properties/ControlPanelViewProperties";
 import {Button} from "../../abstract/display/view/Button";
 import {EventStyle} from "../../style/EventStyle";
+import {VerticalSelector} from "../../abstract/display/view/VerticalSelector";
 
 export class ControlPanelView extends AbstractGameView {
 
     protected properties: ControlPanelViewProperties;
 
     protected spinButton: Button;
+    protected stakeSelector: VerticalSelector;
 
     protected createProperties(properties: AbstractViewProperties) {
         super.createProperties(properties);
@@ -23,6 +25,7 @@ export class ControlPanelView extends AbstractGameView {
     protected create(): void {
         super.create();
         this.createSpinButton();
+        this.createStakeSelector();
     }
 
     protected createSpinButton(): void {
@@ -30,9 +33,33 @@ export class ControlPanelView extends AbstractGameView {
         this.addChild(this.spinButton);
     }
 
+    protected createStakeSelector(): void {
+        let dataValues: number[] = this.model.getStakeValues();
+        let textValues: string[] = [];
+        for(let data of dataValues){
+            textValues.push(this.formatCurrency(data));
+        }
+
+        this.stakeSelector = new VerticalSelector(
+            this.factory,
+            this.properties.stakeSelectorProperties,
+            textValues,
+            dataValues,
+            this.handleOptionSelected,
+            this
+        );
+
+        this.addChild(this.stakeSelector);
+    }
+
     public handleSpin(): void {
         this.dispatchEvent(EventStyle.SPIN);
         this.spinButton.disable();
+    }
+
+    public handleOptionSelected(button: Button): void {
+        let stake: number = button.data;
+        this.model.setStake(stake);
     }
 
     public handleReelsLanded(): void {

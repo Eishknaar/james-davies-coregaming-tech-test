@@ -2,7 +2,14 @@ import "pixi.js";
 import pixiManager from "abstract/graphics/PixiManager";
 import {Factory} from "./abstract/factory/Factory";
 import {ImageLoader} from "./abstract/loader/ImageLoader";
+import { gsap } from "gsap";
+import { PixiPlugin } from "gsap/PixiPlugin";
 
+// register the plugin
+gsap.registerPlugin(PixiPlugin);
+
+// give the plugin a reference to the PIXI object
+PixiPlugin.registerPIXI(PIXI);
 class Main {
 
     protected factory: Factory;

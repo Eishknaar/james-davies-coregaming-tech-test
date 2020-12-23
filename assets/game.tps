@@ -196,6 +196,28 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">images/radioButton0001.png</key>
+            <key type="filename">images/radioButton0002.png</key>
+            <key type="filename">images/radioButton0003.png</key>
+            <key type="filename">images/radioButton0004.png</key>
+            <key type="filename">images/radioButton0005.png</key>
+            <key type="filename">images/radioButton0006.png</key>
+            <key type="filename">images/radioButton0007.png</key>
+            <key type="filename">images/radioButton0008.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>50,25,100,50</rect>
+                <key>scale9Paddings</key>
+                <rect>50,25,100,50</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">images/reelSymbol0001.png</key>
             <key type="filename">images/reelSymbol0002.png</key>
             <key type="filename">images/reelSymbol0003.png</key>
@@ -216,6 +238,21 @@
                 <rect>50,50,100,100</rect>
                 <key>scale9Paddings</key>
                 <rect>50,50,100,100</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">images/selectorPanel.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>50,150,100,300</rect>
+                <key>scale9Paddings</key>
+                <rect>50,150,100,300</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>

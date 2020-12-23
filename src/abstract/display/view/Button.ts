@@ -173,6 +173,10 @@ export class Button extends AbstractGameView {
         }
     }
 
+    public getLang(): string {
+        return this.textField.getLang();
+    }
+
     public destroy(): void {
         super.destroy();
         this.spriteSheet.destroy();

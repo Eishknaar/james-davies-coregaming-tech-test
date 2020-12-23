@@ -139,6 +139,10 @@ export class TextField extends AbstractGameView {
         }
     }
 
+    public getLang(): string {
+        return this.lang;
+    }
+
     public setDynamicText(keyValuePair: KeyValuePair<string, string>, update?: boolean): void {
         this.lang = this.lang.replace(keyValuePair.getKey(), keyValuePair.getValue());
         this.field.text = this.lang;
