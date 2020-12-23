@@ -19,6 +19,8 @@ export class Button extends AbstractGameView {
     private isDown: boolean;
     private isOver: boolean;
 
+    public data: any;
+
     constructor(factory: Factory, properties: ButtonProperties, handler: Function, scope: any) {
         super(factory, properties);
         this.clickHandler = handler;
@@ -32,6 +34,7 @@ export class Button extends AbstractGameView {
 
     protected initialise() {
         super.initialise();
+        this.data = null;
         this.isEnabled = true;
         this.isOver = false;
         this.isDown = false;
@@ -129,7 +132,7 @@ export class Button extends AbstractGameView {
 
     private onClick(): void {
         if (this.clickHandler != null) {
-            this.clickHandler.call(this.clickHandlerScope);
+            this.clickHandler.call(this.clickHandlerScope, this);
         }
     }
 
@@ -147,12 +150,22 @@ export class Button extends AbstractGameView {
         this.sprite.gotoAndStop(0);
     }
 
+    public setText(text: string): void {
+        this.textField.setText(text, true);
+    }
+
     public destroy(): void {
         super.destroy();
+        this.spriteSheet.destroy();
         this.sprite.destroy();
+        this.textField.destroy();
         this.properties = null;
         this.clickHandler = null;
         this.clickHandlerScope = null;
+        this.data = null;
+        this.isDown = null;
+        this.isOver = null;
+        this.isEnabled = null;
 
     }
 
