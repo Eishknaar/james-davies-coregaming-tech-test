@@ -16,6 +16,9 @@ export class VerticalSelectorProperties extends AbstractViewProperties {
     public selectorButtonProperties: RadioButtonProperties;
     public triggerButtonProperties: RadioButtonProperties;
 
+    public closeDuration: number;
+    public openDuration: number;
+
     constructor(backgroundStyle: string, selectorButtonStyle: string, selectorButtonFont: string, triggerButtonStyle: string, triggerButtonFont: string, position?: PIXI.Point){
         super(position);
         this.backgroundStyle = backgroundStyle;
@@ -31,6 +34,8 @@ export class VerticalSelectorProperties extends AbstractViewProperties {
         this.selectorBackgroundProperties = new SpriteProperties(this.backgroundStyle);
         this.selectorButtonProperties = new RadioButtonProperties(this.selectorButtonStyle, this.selectorButtonFont, "");
         this.triggerButtonProperties = new RadioButtonProperties(this.triggerButtonStyle, this.triggerButtonFont, "");
+        this.closeDuration = 1;
+        this.openDuration = 1;
     }
 
 }

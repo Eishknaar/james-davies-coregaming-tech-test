@@ -112,7 +112,7 @@ export class VerticalSelector extends AbstractView {
                 x: this.closePos.x,
                 y: this.closePos.y
             },
-            duration: 1
+            duration: this.properties.closeDuration
         });
     }
 
@@ -124,7 +124,7 @@ export class VerticalSelector extends AbstractView {
                 x: this.openPos.x,
                 y: this.openPos.y
             },
-            duration: 1
+            duration: this.properties.openDuration
         });
     }
 
