@@ -26,6 +26,7 @@ export class ControlPanelView extends AbstractGameView {
         super.create();
         this.createSpinButton();
         this.createStakeSelector();
+        this.stakeSelector.setDefaultOption(0);
     }
 
     protected createSpinButton(): void {

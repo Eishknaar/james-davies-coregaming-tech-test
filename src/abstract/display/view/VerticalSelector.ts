@@ -128,6 +128,12 @@ export class VerticalSelector extends AbstractView {
         });
     }
 
+    public setDefaultOption(index: number): void {
+        let button: RadioButton = this.selectorButtons[index];
+        button.select();
+        this.onSelection(button);
+    }
+
     protected onSelection(button: RadioButton): void {
         button.disable();
         for(let radioButton of this.selectorButtons){

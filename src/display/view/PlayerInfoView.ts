@@ -42,7 +42,7 @@ export class PlayerInfoView extends AbstractGameView {
         this.totalWinField = this.createField(this.properties.totalWinFieldProperties);
         this.stakeField = this.createField(this.properties.stakeFieldProperties);
         this.updateField(this.balanceField, this.model.getResultData().getBalanceData());
-        this.updateField(this.stakeField, this.model.getResultData().getStakeData());
+        this.updateField(this.stakeField, this.model.getStake());
         this.updateField(this.totalWinField, this.model.getResultData().getWinData());
     }
 
