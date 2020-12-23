@@ -59,7 +59,7 @@ export class Button extends AbstractGameView {
     }
 
     protected createTextField(): void {
-        if(this.properties.textFieldProperties) {
+        if (this.properties.textFieldProperties) {
             this.properties.textFieldProperties.setDebug(this.properties.debug);
             this.properties.textFieldProperties.size = new PIXI.Point(this.sprite.width, this.sprite.height);
             this.setFieldPosition(this.properties.textFieldProperties);
@@ -78,23 +78,23 @@ export class Button extends AbstractGameView {
     }
 
     protected setFieldPosition(properties: TextFieldProperties): void {
-        switch(properties.horizontalAlign){
+        switch (properties.horizontalAlign) {
             case AlignConstants.LEFT:
                 properties.position.x = 0;
                 break;
             case AlignConstants.CENTER:
-                properties.position.x = this.sprite.width/2;
+                properties.position.x = this.sprite.width / 2;
                 break;
             case AlignConstants.RIGHT:
                 properties.position.x = this.sprite.width;
         }
 
-        switch(properties.verticalAlign){
+        switch (properties.verticalAlign) {
             case AlignConstants.TOP:
                 properties.position.y = 0;
                 break;
             case AlignConstants.CENTER:
-                properties.position.y = this.sprite.height/2;
+                properties.position.y = this.sprite.height / 2;
                 break;
             case AlignConstants.BOTTOM:
                 properties.position.y = this.sprite.height;
@@ -104,31 +104,48 @@ export class Button extends AbstractGameView {
     protected onButtonDown(): void {
         if (this.isOver) {
             this.isDown = true;
-            this.sprite.gotoAndStop(2);
+            this.handleButtonDown();
         }
     }
 
     protected onButtonUp(): void {
         if (this.isOver && this.isDown) {
-            this.sprite.gotoAndStop(0);
+            this.isDown = false;
+            this.handleButtonUp();
             this.onClick();
         }
-        this.isDown = false;
     }
 
     protected onButtonOver(): void {
-        if(this.isEnabled) {
+        if (this.isEnabled) {
             this.isOver = true;
-            this.sprite.gotoAndStop(1);
+            this.handleButtonOver();
         }
     }
 
     protected onButtonOut(): void {
-        if(this.isEnabled) {
+        if (this.isEnabled) {
             this.isOver = false;
-            this.sprite.gotoAndStop(0);
+            this.handleButtonOut();
         }
     }
+
+    protected handleButtonDown(): void {
+        this.sprite.gotoAndStop(2);
+    }
+
+    protected handleButtonUp(): void {
+        this.sprite.gotoAndStop(0);
+    }
+
+    protected handleButtonOver(): void {
+        this.sprite.gotoAndStop(1);
+    }
+
+    protected handleButtonOut(): void {
+        this.sprite.gotoAndStop(0);
+    }
+
 
     private onClick(): void {
         if (this.clickHandler != null) {
@@ -151,7 +168,9 @@ export class Button extends AbstractGameView {
     }
 
     public setText(text: string): void {
-        this.textField.setText(text, true);
+        if(this.textField) {
+            this.textField.setText(text, true);
+        }
     }
 
     public destroy(): void {
