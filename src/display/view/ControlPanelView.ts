@@ -19,7 +19,7 @@ export class ControlPanelView extends AbstractGameView {
 
     protected addEventListeners() {
         super.addEventListeners();
-        this.addEventListener(EventStyle.REELS_LANDED, this.handleReelsLanded, this);
+        this.addEventListener(EventStyle.SPIN_COMPLETE, this.handleReelsLanded, this);
     }
 
     protected create(): void {

@@ -11,6 +11,7 @@ export class Model{
     private configData: ConfigData;
     private resultData: ResultData;
     private stake: number;
+    private displayBalance: number;
 
     constructor(){
         this.createEventHandler();
@@ -27,6 +28,7 @@ export class Model{
 
     public setConfigData(data: ConfigData): void {
         this.configData = data;
+        this.setDisplayBalance(this.configData.getBalance());
     }
 
     public setResultData(data: ResultData): void {
@@ -35,6 +37,10 @@ export class Model{
 
     public setStake(value: number): void {
         this.stake = value;
+    }
+
+    public setDisplayBalance(value: number): void {
+        this.displayBalance = value;
     }
 
     public getConfigData(): ConfigData {
@@ -49,6 +55,14 @@ export class Model{
         return this.stake;
     }
 
+    public getDisplayBalance(): number {
+        return this.displayBalance;
+    }
+
+    public getFont(fontStyle: string): Font {
+        return this.fontMap.getFont(fontStyle);
+    }
+
     public addEventListener(event: string, handler: Function, scope: any): void {
         this.eventHandler.addListener(event, () => {
             handler.call(scope);
@@ -57,10 +71,6 @@ export class Model{
 
     public dispatchEvent(event: string): void {
         this.eventHandler.emit(event);
-    }
-
-    public getFont(fontStyle: string): Font {
-        return this.fontMap.getFont(fontStyle);
     }
 
 }

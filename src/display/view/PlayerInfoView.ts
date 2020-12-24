@@ -24,6 +24,8 @@ export class PlayerInfoView extends AbstractGameView {
     protected addEventListeners() {
         super.addEventListeners();
         this.addEventListener(EventStyle.STAKE_UPDATED, this.handleStakeUpdated, this);
+        this.addEventListener(EventStyle.SPIN, this.handleSpin, this);
+        this.addEventListener(EventStyle.SPIN_COMPLETE, this.handleSpinComplete, this);
     }
 
     protected create() {
@@ -54,6 +56,18 @@ export class PlayerInfoView extends AbstractGameView {
 
     public handleStakeUpdated(): void {
         this.updateField(this.stakeField, this.model.getStake());
+    }
+
+    public handleSpin(): void {
+        this.updateBalance();
+    }
+
+    public handleSpinComplete(): void {
+        this.updateBalance();
+    }
+
+    protected updateBalance(): void {
+        this.updateField(this.balanceField, this.model.getDisplayBalance());
     }
 
     public updateField(field: TextField, amount: number): void {

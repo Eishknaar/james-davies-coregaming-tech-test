@@ -53,6 +53,10 @@ export class ResultData {
         return this.win;
     }
 
+    public hasWin(): boolean {
+        return this.win > 0;
+    }
+
     public getData(): any {
         return this.data;
     }
