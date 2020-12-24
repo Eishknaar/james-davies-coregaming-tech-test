@@ -26,7 +26,7 @@ export class ControlPanelView extends AbstractGameView {
         super.create();
         this.createSpinButton();
         this.createStakeSelector();
-        this.stakeSelector.setDefaultOption(0);
+        this.stakeSelector.setDefaultOption(this.model.getConfigData().getDefaultStakeIndex());
     }
 
     protected createSpinButton(): void {
@@ -35,7 +35,7 @@ export class ControlPanelView extends AbstractGameView {
     }
 
     protected createStakeSelector(): void {
-        let dataValues: number[] = this.model.getStakeValues();
+        let dataValues: number[] = this.model.getConfigData().getStakeValues();
         let textValues: string[] = [];
         for(let data of dataValues){
             textValues.push(this.formatCurrency(data));
@@ -54,7 +54,7 @@ export class ControlPanelView extends AbstractGameView {
     }
 
     public handleSpin(): void {
-        this.dispatchEvent(EventStyle.SPIN);
+        this.dispatchEvent(EventStyle.SPIN_REQUEST);
         this.spinButton.disable();
     }
 

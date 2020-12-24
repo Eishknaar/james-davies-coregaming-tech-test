@@ -9,13 +9,21 @@ import {ControlPanelView} from "../../display/view/ControlPanelView";
 import {ControlPanelViewProperties} from "../../display/properties/ControlPanelViewProperties";
 import {PlayerInfoView} from "../../display/view/PlayerInfoView";
 import {PlayerInfoViewProperties} from "../../display/properties/PlayerInfoViewProperties";
+import {GameController} from "../../controllers/GameController";
 
 export class Factory {
 
     protected model: Model;
 
+    protected gameController: GameController;
+
     constructor(){
         this.model = new Model();
+        this.createControllers();
+    }
+
+    protected createControllers(): void {
+        this.gameController = new GameController(this);
     }
 
     public createControlPanel(): ControlPanelView {
