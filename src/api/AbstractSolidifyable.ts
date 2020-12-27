@@ -7,9 +7,14 @@ export class AbstractSolidifyable {
     constructor(data: any){
         this.data = data;
         this.solidify();
+        this.create();
     }
 
     protected solidify(): void {
+
+    }
+
+    protected create(): void {
 
     }
 

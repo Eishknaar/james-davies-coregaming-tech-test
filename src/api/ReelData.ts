@@ -1,19 +1,15 @@
-import {AbstractSolidifyable} from "./AbstractSolidifyable";
-import {ServerConstants} from "./constants/ServerConstants";
+export class ReelData {
 
-export class ReelData extends AbstractSolidifyable {
-
-    protected column: number;
+    protected id: number;
     protected symbols: number[];
 
-    protected solidify() {
-        super.solidify();
-        this.column = this.getNumber(ServerConstants.COLUMN_ID);
-        this.symbols = this.getNumberArray(ServerConstants.SYMBOLS);
+    constructor(index: number, symbols: number[]) {
+        this.id = index;
+        this.symbols = symbols;
     }
 
-    public getColumn(): number {
-        return this.column;
+    public getId(): number {
+        return this.id;
     }
 
     public getSymbols(): number[] {
@@ -23,5 +19,5 @@ export class ReelData extends AbstractSolidifyable {
     public getSymbolAt(index: number): number {
         return this.symbols[index];
     }
-
 }
+
