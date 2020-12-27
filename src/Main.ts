@@ -4,6 +4,7 @@ import {Factory} from "./abstract/factory/Factory";
 import {ImageLoader} from "./abstract/loader/ImageLoader";
 import { gsap } from "gsap";
 import { PixiPlugin } from "gsap/PixiPlugin";
+import {Server} from "./server";
 
 // register the plugin
 gsap.registerPlugin(PixiPlugin);
@@ -14,10 +15,16 @@ class Main {
 
     protected factory: Factory;
     protected loader: ImageLoader;
+    protected server: Server;
 
     constructor() {
+        this.requestServer();
         this.createFactory();
         this.createLoader();
+    }
+
+    protected requestServer(): void {
+        this.server = new Server();
     }
 
     protected createFactory(): void {
