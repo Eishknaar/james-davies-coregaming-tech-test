@@ -3,9 +3,9 @@ import {ReelDisplayViewProperties} from "../properties/ReelDisplayViewProperties
 import {AbstractViewProperties} from "../../abstract/display/properties/AbstractViewProperties";
 import {Panel} from "../../abstract/display/view/Panel";
 import {ReelView} from "./ReelView";
-import {ResultData} from "../../abstract/data/ResultData";
-import {Dictionary} from "../../abstract/display/view/Dictionary";
 import {EventStyle} from "../../style/EventStyle";
+import {ReelData} from "../../api/ReelData";
+import {SpinResponse} from "../../api/SpinResponse";
 
 export class ReelDisplayView extends AbstractGameView {
 
@@ -82,9 +82,9 @@ export class ReelDisplayView extends AbstractGameView {
     protected stopReel(args: any[]): void {
         let index: number = args[0];
         let reel: ReelView = this.reels[index];
-        let resultData: ResultData = this.model.getResultData();
-        let reelData: Dictionary<number, number[]> = resultData.getReelData();
-        let symbols: number[] = reelData.getValue(index);
+        let spinData: SpinResponse = this.model.getSpinResponse();
+        let reelData: ReelData = spinData.getReelData()[index];
+        let symbols: number[] = reelData.getSymbols();
         reel.stop(symbols);
     }
 

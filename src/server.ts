@@ -1,5 +1,4 @@
 import * as convert from "xml-js";
-import {SpinResponse} from "./api/SpinResponse";
 
 export class Server {
 
@@ -9,7 +8,6 @@ export class Server {
 
     constructor(){
         this.create();
-        this.spin(100, 1.20, this.handleSpinResponse, this);
     }
 
     private create(): void {
@@ -18,12 +16,19 @@ export class Server {
 
     private createRequest(): void {
         this.request = new XMLHttpRequest();
-        this.request.open("POST", Server.URL, true);
     }
 
     public spin(balance: number, stake: number, handler:Function, handlerScope: any): void {
-        this.request.onload = function(){handler.call(handlerScope, this.responseText)};
+        this.request.open("POST", Server.URL, true);
+        let localHandler: Function = this.handleRequestLoaded;
+        let localScope: Server = this;
         let xml: string = this.convertToXml(balance, stake);
+        this.request.onload = function(){
+            localHandler.call(
+                localScope,
+                this.responseText, handler, handlerScope
+            )
+        };
         this.request.send(xml);
     }
 
@@ -33,10 +38,10 @@ export class Server {
         return `<Request balance="${balance}" stake="${stake}" />`
     }
 
-    public handleSpinResponse(response: any): void {
+    public handleRequestLoaded(response: string, handler: Function, handlerScope: any): void {
         let json: string = convert.xml2json(response);
         let realJson = JSON.parse(json);
-        let spin: SpinResponse = new SpinResponse(realJson.elements[0]);
-        console.log(spin);
+        let data: any = realJson.elements[0];
+        handler.call(handlerScope, data);
     }
 }

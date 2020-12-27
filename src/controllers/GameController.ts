@@ -1,13 +1,13 @@
 import {AbstractController} from "../abstract/controllers/AbstractController";
 import {Factory} from "../abstract/factory/Factory";
 import {ConfigData} from "../abstract/data/ConfigData";
-import {ResultData} from "../abstract/data/ResultData";
 import {EventStyle} from "../style/EventStyle";
+import {SpinResponse} from "../api/SpinResponse";
+import {BalanceData} from "../api/BalanceData";
 
-export class GameController extends AbstractController{
+export class GameController extends AbstractController {
 
     protected configData: ConfigData;
-    protected resultData: ResultData;
 
     constructor(factory: Factory) {
         super(factory);
@@ -26,51 +26,45 @@ export class GameController extends AbstractController{
     }
 
     public handleSpinRequest(): void {
-        let response: any = this.getServerResponse();
-        this.createResultData(response);
-        this.chargeBalance();
+        this.server.spin(this.model.getBalance(), this.model.getStake(), this.handleSpinResponse, this);
+    }
+
+    public handleSpinResponse(spinData: any): void {
+        let spin: SpinResponse = new SpinResponse(spinData);
+        this.model.setSpinResponse(spin);
+        this.updateBalanceInfo(spin.getBalanceData());
         this.dispatchEvent(EventStyle.SPIN);
     }
 
-    protected getServerResponse(): any {
-        let response: any = "get info from server";
-        return response;
-    }
-
-    protected createResultData(response: any): void {
-        this.resultData = new ResultData(response);
-        this.model.setResultData(this.resultData);
-    }
-
-    protected chargeBalance(): void {
-        let oldBalance: number = this.model.getDisplayBalance();
-        let newBalance: number = oldBalance - this.model.getStake();
-        this.model.setDisplayBalance(newBalance);
+    protected updateBalanceInfo(data: BalanceData): void {
+        let displayBalance = this.model.getBalance();
+        displayBalance = displayBalance - this.model.getStake();
+        this.model.setDisplayBalance(displayBalance);
+        this.model.setBalance(data.getBalance());
+        this.model.setWin(data.getWin());
     }
 
     protected handleReelsLanded(): void {
-        if(this.resultData.hasWin()){
+        if (this.model.hasWin()) {
             this.win();
-        }
-        else{
+        } else {
             this.lose();
         }
     }
 
     protected win(): void {
-        this.model.setDisplayBalance(this.resultData.getBalanceData());
+        this.model.setDisplayBalance(this.model.getBalance());
         this.spinComplete();
     }
 
     protected lose(): void {
-        this.model.setDisplayBalance(this.resultData.getBalanceData());
+        this.model.setDisplayBalance(this.model.getBalance());
         this.spinComplete();
     }
 
     protected spinComplete(): void {
         this.dispatchEvent(EventStyle.SPIN_COMPLETE);
     }
-
 
 
 }

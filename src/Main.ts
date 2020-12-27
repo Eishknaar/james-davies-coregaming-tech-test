@@ -15,16 +15,10 @@ class Main {
 
     protected factory: Factory;
     protected loader: ImageLoader;
-    protected server: Server;
 
     constructor() {
-        this.requestServer();
         this.createFactory();
         this.createLoader();
-    }
-
-    protected requestServer(): void {
-        this.server = new Server();
     }
 
     protected createFactory(): void {

@@ -1,14 +1,17 @@
 import {Model} from "../model/Model";
 import {Factory} from "../factory/Factory";
+import {Server} from "../../server";
 
 export class AbstractController {
 
     protected model: Model;
     protected factory: Factory;
+    protected server: Server;
 
     constructor(factory: Factory) {
         this.createFactory(factory);
         this.createModel();
+        this.createServer();
         this.addEventListeners()
         this.initialise();
     }
@@ -19,6 +22,10 @@ export class AbstractController {
 
     protected createModel(): void {
         this.model = this.factory.getModel();
+    }
+
+    protected createServer(): void {
+        this.server = new Server();
     }
 
     protected addEventListeners(): void {
