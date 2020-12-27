@@ -3,6 +3,7 @@ import {AbstractViewProperties} from "../../abstract/display/properties/Abstract
 import {ReelViewProperties} from "../properties/ReelViewProperties";
 import {Panel} from "../../abstract/display/view/Panel";
 import {CellView} from "./CellView";
+import {ReelData} from "../../api/ReelData";
 
 export class ReelView extends AbstractGameView {
 
@@ -10,6 +11,8 @@ export class ReelView extends AbstractGameView {
 
     protected panel: Panel;
     protected cells: CellView[];
+
+    private reelData: ReelData;
 
     protected createProperties(properties:AbstractViewProperties): void {
         super.createProperties(properties);
@@ -42,17 +45,32 @@ export class ReelView extends AbstractGameView {
     }
 
     public spin(): void {
-        for(let cell of this.cells){
-            cell.spin();
+        let delay: number = 0;
+        for(let i: number = 0; i < this.cells.length; i++){
+            this.callAfter(delay, this.spinCell, this, i);
+            delay += this.properties.spinDelay;
         }
     }
 
-    public stop(symbols: number[]): void {
+    public spinCell(index: number): void {
+        let cell: CellView = this.cells[index];
+        cell.spin();
+    }
+
+
+    public stop(reelData: ReelData): void {
+        this.reelData = reelData;
+        let delay: number = 0;
         for(let i: number = 0; i < this.cells.length; i++){
-            let cell: CellView = this.cells[i];
-            let symbol: number = symbols[i];
-            cell.stop(symbol);
+            this.callAfter(delay, this.stopCell, this, i);
+            delay += this.properties.spinDelay;
         }
+    }
+
+    public stopCell(index: number): void {
+        let cell: CellView = this.cells[index];
+        let symbol: number = this.reelData.getSymbolAt(index);
+        cell.stop(symbol);
     }
 
 }

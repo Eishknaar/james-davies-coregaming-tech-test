@@ -18,7 +18,7 @@ export class ReelDisplayViewProperties extends AbstractViewProperties {
         this.numberOfReels = 3;
         this.panelProperties = new PanelProperties(1, 3, 5, 5);
         this.spinDelay = 500;
-        this.stopDelay = 1000;
+        this.stopDelay = 2000;
     }
 
 }
