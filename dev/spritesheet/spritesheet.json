@@ -1,8 +1,16 @@
 {"frames": {
 
+"background.png":
+{
+	"frame": {"x":0,"y":950,"w":1920,"h":1080},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1920,"h":1080},
+	"sourceSize": {"w":1920,"h":1080}
+},
 "navigationBar.png":
 {
-	"frame": {"x":0,"y":0,"w":900,"h":50},
+	"frame": {"x":0,"y":900,"w":900,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":900,"h":50},
@@ -10,7 +18,7 @@
 },
 "radioButton0001.png":
 {
-	"frame": {"x":0,"y":50,"w":200,"h":100},
+	"frame": {"x":400,"y":0,"w":200,"h":100},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":100},
@@ -18,7 +26,7 @@
 },
 "radioButton0002.png":
 {
-	"frame": {"x":200,"y":50,"w":200,"h":100},
+	"frame": {"x":600,"y":0,"w":200,"h":100},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":100},
@@ -26,7 +34,7 @@
 },
 "radioButton0003.png":
 {
-	"frame": {"x":400,"y":50,"w":200,"h":100},
+	"frame": {"x":800,"y":0,"w":200,"h":100},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":100},
@@ -34,7 +42,7 @@
 },
 "radioButton0004.png":
 {
-	"frame": {"x":600,"y":50,"w":200,"h":100},
+	"frame": {"x":1000,"y":0,"w":200,"h":100},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":100},
@@ -42,7 +50,7 @@
 },
 "radioButton0005.png":
 {
-	"frame": {"x":800,"y":50,"w":200,"h":100},
+	"frame": {"x":1200,"y":0,"w":200,"h":100},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":100},
@@ -50,7 +58,7 @@
 },
 "radioButton0006.png":
 {
-	"frame": {"x":0,"y":150,"w":200,"h":100},
+	"frame": {"x":1400,"y":0,"w":200,"h":100},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":100},
@@ -58,7 +66,7 @@
 },
 "radioButton0007.png":
 {
-	"frame": {"x":200,"y":150,"w":200,"h":100},
+	"frame": {"x":1600,"y":0,"w":200,"h":100},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":100},
@@ -66,7 +74,7 @@
 },
 "radioButton0008.png":
 {
-	"frame": {"x":400,"y":150,"w":200,"h":100},
+	"frame": {"x":0,"y":100,"w":200,"h":100},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":100},
@@ -74,7 +82,7 @@
 },
 "reelSymbol0001.png":
 {
-	"frame": {"x":0,"y":250,"w":200,"h":200},
+	"frame": {"x":200,"y":100,"w":200,"h":200},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
@@ -82,7 +90,7 @@
 },
 "reelSymbol0002.png":
 {
-	"frame": {"x":200,"y":250,"w":200,"h":200},
+	"frame": {"x":400,"y":100,"w":200,"h":200},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
@@ -90,7 +98,7 @@
 },
 "reelSymbol0003.png":
 {
-	"frame": {"x":400,"y":250,"w":200,"h":200},
+	"frame": {"x":600,"y":100,"w":200,"h":200},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
@@ -98,7 +106,7 @@
 },
 "selectorPanel.png":
 {
-	"frame": {"x":768,"y":906,"w":200,"h":600},
+	"frame": {"x":1736,"y":300,"w":200,"h":600},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":600},
@@ -106,7 +114,7 @@
 },
 "sequence0001.png":
 {
-	"frame": {"x":0,"y":650,"w":256,"h":256},
+	"frame": {"x":200,"y":300,"w":256,"h":256},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
@@ -114,7 +122,7 @@
 },
 "sequence0002.png":
 {
-	"frame": {"x":256,"y":650,"w":256,"h":256},
+	"frame": {"x":456,"y":300,"w":256,"h":256},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
@@ -122,7 +130,7 @@
 },
 "sequence0003.png":
 {
-	"frame": {"x":512,"y":650,"w":256,"h":256},
+	"frame": {"x":712,"y":300,"w":256,"h":256},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
@@ -130,7 +138,7 @@
 },
 "sequence0004.png":
 {
-	"frame": {"x":0,"y":906,"w":256,"h":256},
+	"frame": {"x":968,"y":300,"w":256,"h":256},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
@@ -138,7 +146,7 @@
 },
 "sequence0005.png":
 {
-	"frame": {"x":256,"y":906,"w":256,"h":256},
+	"frame": {"x":1224,"y":300,"w":256,"h":256},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
@@ -146,7 +154,7 @@
 },
 "sequence0006.png":
 {
-	"frame": {"x":512,"y":906,"w":256,"h":256},
+	"frame": {"x":1480,"y":300,"w":256,"h":256},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
@@ -154,7 +162,7 @@
 },
 "spinAnimation0001.png":
 {
-	"frame": {"x":600,"y":250,"w":200,"h":200},
+	"frame": {"x":800,"y":100,"w":200,"h":200},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
@@ -162,7 +170,7 @@
 },
 "spinAnimation0002.png":
 {
-	"frame": {"x":800,"y":250,"w":200,"h":200},
+	"frame": {"x":1000,"y":100,"w":200,"h":200},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
@@ -170,7 +178,7 @@
 },
 "spinAnimation0003.png":
 {
-	"frame": {"x":0,"y":450,"w":200,"h":200},
+	"frame": {"x":1200,"y":100,"w":200,"h":200},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
@@ -178,7 +186,7 @@
 },
 "spinAnimation0004.png":
 {
-	"frame": {"x":200,"y":450,"w":200,"h":200},
+	"frame": {"x":1400,"y":100,"w":200,"h":200},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
@@ -186,7 +194,7 @@
 },
 "spinAnimation0005.png":
 {
-	"frame": {"x":400,"y":450,"w":200,"h":200},
+	"frame": {"x":1600,"y":100,"w":200,"h":200},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
@@ -194,7 +202,7 @@
 },
 "spinAnimation0006.png":
 {
-	"frame": {"x":600,"y":450,"w":200,"h":200},
+	"frame": {"x":0,"y":300,"w":200,"h":200},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
@@ -202,7 +210,7 @@
 },
 "spinButton0001.png":
 {
-	"frame": {"x":600,"y":150,"w":100,"h":100},
+	"frame": {"x":0,"y":0,"w":100,"h":100},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
@@ -210,7 +218,7 @@
 },
 "spinButton0002.png":
 {
-	"frame": {"x":700,"y":150,"w":100,"h":100},
+	"frame": {"x":100,"y":0,"w":100,"h":100},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
@@ -218,7 +226,7 @@
 },
 "spinButton0003.png":
 {
-	"frame": {"x":800,"y":150,"w":100,"h":100},
+	"frame": {"x":200,"y":0,"w":100,"h":100},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
@@ -226,7 +234,7 @@
 },
 "spinButton0004.png":
 {
-	"frame": {"x":900,"y":150,"w":100,"h":100},
+	"frame": {"x":300,"y":0,"w":100,"h":100},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":100,"h":100},
@@ -244,8 +252,8 @@
 	"version": "1.0",
 	"image": "spritesheet.png",
 	"format": "RGBA8888",
-	"size": {"w":1000,"h":1506},
+	"size": {"w":1936,"h":2030},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:484d5b2dcf3ff15ca79ac828faf7a90c:81c2acb97d1e31eea798514851036223:729adc6043343cfda41c447ce8f464d6$"
+	"smartupdate": "$TexturePacker:SmartUpdate:7daf08058058dffc1749be43b542040e:1e04591745159e51904ffa83ee1b06c7:729adc6043343cfda41c447ce8f464d6$"
 }
 }

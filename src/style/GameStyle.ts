@@ -1,5 +1,6 @@
 export class GameStyle {
 
+    public static BACKGROUND: string = "background";
     public static NAVIGATION_BAR: string = "navigationBar";
     public static REEL_SYMBOL: string = "reelSymbol";
     public static SPIN_ANIMATION: string = "spinAnimation";

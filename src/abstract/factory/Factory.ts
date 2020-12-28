@@ -10,6 +10,8 @@ import {ControlPanelViewProperties} from "../../display/properties/ControlPanelV
 import {PlayerInfoView} from "../../display/view/PlayerInfoView";
 import {PlayerInfoViewProperties} from "../../display/properties/PlayerInfoViewProperties";
 import {GameController} from "../../controllers/GameController";
+import {Background} from "../../display/view/Background";
+import {BackgroundProperties} from "../../display/properties/BackgroundProperties";
 
 export class Factory {
 
@@ -24,6 +26,10 @@ export class Factory {
 
     protected createControllers(): void {
         this.gameController = new GameController(this);
+    }
+
+    public createBackground(): Background {
+        return new Background(this, new BackgroundProperties());
     }
 
     public createControlPanel(): ControlPanelView {

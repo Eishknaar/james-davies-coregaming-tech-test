@@ -30,9 +30,15 @@ class Main {
     }
 
     protected create(): void {
+        this.createBackground();
         this.createReelDisplay();
         this.createControlPanel();
         this.createPlayerInfo();
+    }
+
+    protected createBackground(): void {
+        let background = this.factory.createBackground();
+        this.addComponent(background);
     }
 
     protected createReelDisplay(): void {
