@@ -61,11 +61,10 @@ export class ReelDisplayView extends AbstractGameView {
     }
 
     protected stopReels(): void {
-        let delay: number = 0;
         for(let i: number = 0; i < this.reels.length; i++){
             this.stopReel(i);
         }
-        this.callAfter(delay, this.reelsComplete, this);
+        this.callAfter(this.properties.stopDelay, this.reelsComplete, this);
     }
 
     protected stopReel(index: number): void {
