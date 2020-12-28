@@ -211,28 +211,6 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">images/radioButton0001.png</key>
-            <key type="filename">images/radioButton0002.png</key>
-            <key type="filename">images/radioButton0003.png</key>
-            <key type="filename">images/radioButton0004.png</key>
-            <key type="filename">images/radioButton0005.png</key>
-            <key type="filename">images/radioButton0006.png</key>
-            <key type="filename">images/radioButton0007.png</key>
-            <key type="filename">images/radioButton0008.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>50,25,100,50</rect>
-                <key>scale9Paddings</key>
-                <rect>50,25,100,50</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
             <key type="filename">images/reelSymbol0001.png</key>
             <key type="filename">images/reelSymbol0002.png</key>
             <key type="filename">images/reelSymbol0003.png</key>
@@ -256,41 +234,6 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">images/selectorPanel.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>50,150,100,300</rect>
-                <key>scale9Paddings</key>
-                <rect>50,150,100,300</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">images/sequence0001.png</key>
-            <key type="filename">images/sequence0002.png</key>
-            <key type="filename">images/sequence0003.png</key>
-            <key type="filename">images/sequence0004.png</key>
-            <key type="filename">images/sequence0005.png</key>
-            <key type="filename">images/sequence0006.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>64,64,128,128</rect>
-                <key>scale9Paddings</key>
-                <rect>64,64,128,128</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
             <key type="filename">images/spinButton0001.png</key>
             <key type="filename">images/spinButton0002.png</key>
             <key type="filename">images/spinButton0003.png</key>
@@ -303,9 +246,46 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>25,25,50,50</rect>
+                <rect>35,22,70,44</rect>
                 <key>scale9Paddings</key>
-                <rect>25,25,50,50</rect>
+                <rect>35,22,70,44</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">images/stakeSelectorButton0001.png</key>
+            <key type="filename">images/stakeSelectorButton0002.png</key>
+            <key type="filename">images/stakeSelectorButton0003.png</key>
+            <key type="filename">images/stakeSelectorButton0004.png</key>
+            <key type="filename">images/stakeSelectorButton0005.png</key>
+            <key type="filename">images/stakeSelectorButton0006.png</key>
+            <key type="filename">images/stakeSelectorButton0007.png</key>
+            <key type="filename">images/stakeSelectorButton0008.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>75,22,150,43</rect>
+                <key>scale9Paddings</key>
+                <rect>75,22,150,43</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">images/stakeSelectorPanel.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>75,129,150,258</rect>
+                <key>scale9Paddings</key>
+                <rect>75,129,150,258</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>

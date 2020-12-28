@@ -5,8 +5,8 @@ export class GameStyle {
     public static REEL_SYMBOL: string = "reelSymbol";
     public static SPIN_ANIMATION: string = "spinAnimation";
     public static SPIN_BUTTON: string = "spinButton";
-    public static SELECTOR_PANEL: string = "selectorPanel";
-    public static STAKE_SELECTOR_BUTTON: string = "radioButton";
-    public static STAKE_BUTTON: string = "radioButton";
+    public static STAKE_SELECTOR_PANEL: string = "stakeSelectorPanel";
+    public static STAKE_SELECTOR_BUTTON: string = "stakeSelectorButton";
+    public static STAKE_BUTTON: string = "stakeSelectorButton";
 
 }
