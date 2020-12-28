@@ -211,15 +211,15 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">images/reelAnimation0001.png</key>
+            <key type="filename">images/reelAnimation0002.png</key>
+            <key type="filename">images/reelAnimation0003.png</key>
+            <key type="filename">images/reelAnimation0004.png</key>
+            <key type="filename">images/reelAnimation0005.png</key>
+            <key type="filename">images/reelAnimation0006.png</key>
             <key type="filename">images/reelSymbol0001.png</key>
             <key type="filename">images/reelSymbol0002.png</key>
             <key type="filename">images/reelSymbol0003.png</key>
-            <key type="filename">images/spinAnimation0001.png</key>
-            <key type="filename">images/spinAnimation0002.png</key>
-            <key type="filename">images/spinAnimation0003.png</key>
-            <key type="filename">images/spinAnimation0004.png</key>
-            <key type="filename">images/spinAnimation0005.png</key>
-            <key type="filename">images/spinAnimation0006.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
