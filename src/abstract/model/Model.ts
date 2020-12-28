@@ -31,6 +31,7 @@ export class Model{
     public setConfigData(data: ConfigData): void {
         this.configData = data;
         this.setBalance(this.configData.getBalance());
+        this.setStake(this.configData.getStakeValues()[this.configData.getDefaultStakeIndex()]);
     }
 
     public setSpinResponse(data: SpinResponse): void {
