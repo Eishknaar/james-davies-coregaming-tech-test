@@ -39,9 +39,18 @@ export class Server {
     }
 
     public handleRequestLoaded(response: string, handler: Function, handlerScope: any): void {
-        let json: string = convert.xml2json(response);
-        let realJson = JSON.parse(json);
-        let data: any = realJson.elements[0];
-        handler.call(handlerScope, data);
+        let responseCode: number = 1;
+        let data: any = {};
+        try {
+            let json: string = convert.xml2json(response);
+            let realJson = JSON.parse(json);
+            data = realJson.elements[0];
+        }
+        catch(e){
+            console.error("Oops! Looks like the game engine didn't understand that. Why don't you try spinning again.");
+            responseCode = 0;
+        }
+        handler.call(handlerScope, responseCode, data);
+
     }
 }

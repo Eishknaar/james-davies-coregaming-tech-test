@@ -29,11 +29,16 @@ export class GameController extends AbstractController {
         this.server.spin(this.model.getBalance(), this.model.getStake(), this.handleSpinResponse, this);
     }
 
-    public handleSpinResponse(spinData: any): void {
-        let spin: SpinResponse = new SpinResponse(spinData);
-        this.model.setSpinResponse(spin);
-        this.updateBalanceInfo(spin.getBalanceData());
-        this.dispatchEvent(EventStyle.SPIN);
+    public handleSpinResponse(responseCode: number, spinData: any): void {
+        if(responseCode == 0){
+            this.dispatchEvent(EventStyle.SPIN_COMPLETE);
+        }
+        else {
+            let spin: SpinResponse = new SpinResponse(spinData);
+            this.model.setSpinResponse(spin);
+            this.updateBalanceInfo(spin.getBalanceData());
+            this.dispatchEvent(EventStyle.SPIN);
+        }
     }
 
     protected updateBalanceInfo(data: BalanceData): void {
@@ -57,9 +62,6 @@ export class GameController extends AbstractController {
         let win = this.model.getSpinResponse().getBalanceData().getWin();
         let totalWin = currentWin + win;
         this.model.setWin(totalWin);
-        console.log("currentWin = " + currentWin);
-        console.log("win = " + win);
-        console.log("totalWin = " + totalWin);
         this.spinComplete();
     }
 
