@@ -17,7 +17,7 @@ export class ControlPanelViewProperties extends AbstractViewProperties {
 
     protected setDefaultValues(): void {
         this.spinButtonProperties = new ButtonProperties(GameStyle.SPIN_BUTTON, FontStyle.SPIN_BUTTON, GameLang.SPIN_BUTTON, new PIXI.Point(1350, 380));
-        this.stakeSelectorProperties = new VerticalSelectorProperties(GameStyle.STAKE_SELECTOR_PANEL, GameStyle.STAKE_SELECTOR_BUTTON, FontStyle.STAKE_SELECTOR_BUTTON, GameStyle.STAKE_BUTTON, FontStyle.STAKE_BUTTON, new PIXI.Point(400,650));
+        this.stakeSelectorProperties = new VerticalSelectorProperties(GameStyle.STAKE_SELECTOR_PANEL, GameStyle.STAKE_SELECTOR_BUTTON, FontStyle.STAKE_SELECTOR_BUTTON, GameStyle.STAKE_BUTTON, FontStyle.STAKE_BUTTON, new PIXI.Point(360,650));
         this.stakeSelectorProperties.closeDuration = 0.7;
         this.stakeSelectorProperties.openDuration = 0.7;
     }
