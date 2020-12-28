@@ -19,6 +19,7 @@ export class PlayerInfoViewProperties extends AbstractViewProperties {
     }
 
     protected setDefaultValues(): void {
+        this.position = new PIXI.Point(510, 800);
         this.backgroundProperties = new SpriteProperties(GameStyle.NAVIGATION_BAR);
         this.stakeFieldProperties = new TextFieldProperties(FontStyle.PLAYER_INFO, GameLang.STAKE, new PIXI.Point(290, 40), new PIXI.Point(10, 25), AlignConstants.LEFT);
         this.balanceFieldProperties = new TextFieldProperties(FontStyle.PLAYER_INFO, GameLang.BALANCE, new PIXI.Point(290, 40), new PIXI.Point(450, 25));

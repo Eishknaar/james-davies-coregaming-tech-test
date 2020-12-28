@@ -14,7 +14,7 @@ export class ReelDisplayViewProperties extends AbstractViewProperties {
     }
 
     protected setDefaultValues(): void {
-        this.position = new PIXI.Point(100, 50);
+        this.position = new PIXI.Point(660, 140);
         this.numberOfReels = 3;
         this.panelProperties = new PanelProperties(1, 3, 5, 5);
         this.spinDelay = 500;
