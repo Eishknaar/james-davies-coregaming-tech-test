@@ -41,7 +41,6 @@ export class GameController extends AbstractController {
         displayBalance = displayBalance - this.model.getStake();
         this.model.setDisplayBalance(displayBalance);
         this.model.setBalance(data.getBalance());
-        this.model.setWin(data.getWin());
     }
 
     protected handleReelsLanded(): void {
@@ -54,6 +53,13 @@ export class GameController extends AbstractController {
 
     protected win(): void {
         this.model.setDisplayBalance(this.model.getBalance());
+        let currentWin = this.model.getWin();
+        let win = this.model.getSpinResponse().getBalanceData().getWin();
+        let totalWin = currentWin + win;
+        this.model.setWin(totalWin);
+        console.log("currentWin = " + currentWin);
+        console.log("win = " + win);
+        console.log("totalWin = " + totalWin);
         this.spinComplete();
     }
 

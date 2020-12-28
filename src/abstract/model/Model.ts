@@ -32,6 +32,7 @@ export class Model{
         this.configData = data;
         this.setBalance(this.configData.getBalance());
         this.setStake(this.configData.getStakeValues()[this.configData.getDefaultStakeIndex()]);
+        this.setWin(0);
     }
 
     public setSpinResponse(data: SpinResponse): void {
@@ -79,7 +80,7 @@ export class Model{
     }
 
     public hasWin(): boolean {
-        return this.win > 0;
+        return this.getSpinResponse().getBalanceData().getWin() > 0;
     }
 
     public getFont(fontStyle: string): Font {

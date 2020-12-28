@@ -64,10 +64,15 @@ export class PlayerInfoView extends AbstractGameView {
 
     public handleSpinComplete(): void {
         this.updateBalance();
+        this.updateWin();
     }
 
     protected updateBalance(): void {
         this.updateField(this.balanceField, this.model.getDisplayBalance());
+    }
+
+    protected updateWin(): void {
+        this.updateField(this.totalWinField, this.model.getWin());
     }
 
     public updateField(field: TextField, amount: number): void {
