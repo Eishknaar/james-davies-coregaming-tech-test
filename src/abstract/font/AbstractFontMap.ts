@@ -6,7 +6,7 @@ export class AbstractFontMap {
 
     private fontMaps: Dictionary<string, any>;
 
-    constructor(){
+    constructor() {
         this.initialise();
         this.createFontMaps();
     }

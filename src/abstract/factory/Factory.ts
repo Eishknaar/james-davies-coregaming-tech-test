@@ -19,7 +19,7 @@ export class Factory {
 
     protected gameController: GameController;
 
-    constructor(){
+    constructor() {
         this.model = new Model();
         this.createControllers();
     }

@@ -166,7 +166,7 @@ export class Button extends AbstractGameView {
     }
 
     public setText(text: string): void {
-        if(this.textField) {
+        if (this.textField) {
             this.textField.setText(text, true);
         }
     }

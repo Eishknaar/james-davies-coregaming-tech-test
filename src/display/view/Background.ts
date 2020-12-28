@@ -11,7 +11,7 @@ export class Background extends AbstractGameView {
 
     protected createProperties(properties: AbstractViewProperties) {
         super.createProperties(properties);
-        this.properties = <BackgroundProperties> properties;
+        this.properties = <BackgroundProperties>properties;
     }
 
     protected create() {

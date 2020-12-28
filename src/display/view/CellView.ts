@@ -9,9 +9,9 @@ export class CellView extends AbstractGameView {
     protected spinAnimation: AnimatedSprite;
     protected symbol: AnimatedSprite;
 
-    protected createProperties(properties:AbstractViewProperties): void {
+    protected createProperties(properties: AbstractViewProperties): void {
         super.createProperties(properties);
-        this.properties = <CellViewProperties> properties;
+        this.properties = <CellViewProperties>properties;
     }
 
     protected create(): void {
@@ -21,7 +21,7 @@ export class CellView extends AbstractGameView {
     }
 
     protected createSymbol(): void {
-        this.symbol= new AnimatedSprite(this.properties.symbolProperties);
+        this.symbol = new AnimatedSprite(this.properties.symbolProperties);
         this.addChild(this.symbol);
     }
 

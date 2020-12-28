@@ -8,7 +8,7 @@ export class CellViewProperties extends AbstractViewProperties {
     public symbolProperties: SpriteProperties;
     public animatedSpriteProperties: AnimatedSpriteProperties;
 
-    constructor(){
+    constructor() {
         super();
         this.setDefaultValues();
     }

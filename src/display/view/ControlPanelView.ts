@@ -14,7 +14,7 @@ export class ControlPanelView extends AbstractGameView {
 
     protected createProperties(properties: AbstractViewProperties) {
         super.createProperties(properties);
-        this.properties = <ControlPanelViewProperties> properties;
+        this.properties = <ControlPanelViewProperties>properties;
     }
 
     protected addEventListeners() {
@@ -37,7 +37,7 @@ export class ControlPanelView extends AbstractGameView {
     protected createStakeSelector(): void {
         let dataValues: number[] = this.model.getConfigData().getStakeValues();
         let textValues: string[] = [];
-        for(let data of dataValues){
+        for (let data of dataValues) {
             textValues.push(this.formatCurrency(data));
         }
 

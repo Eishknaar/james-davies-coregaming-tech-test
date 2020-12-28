@@ -18,7 +18,7 @@ export class PlayerInfoView extends AbstractGameView {
 
     protected createProperties(properties: AbstractViewProperties) {
         super.createProperties(properties);
-        this.properties = <PlayerInfoViewProperties> properties;
+        this.properties = <PlayerInfoViewProperties>properties;
     }
 
     protected addEventListeners() {

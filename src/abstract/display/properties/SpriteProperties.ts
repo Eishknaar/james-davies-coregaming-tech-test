@@ -1,4 +1,5 @@
 import {AbstractViewProperties} from "./AbstractViewProperties";
+
 export class SpriteProperties extends AbstractViewProperties {
 
     public imageName: string;

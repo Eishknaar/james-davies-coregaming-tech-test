@@ -22,7 +22,7 @@ export class VerticalSelectorProperties extends AbstractViewProperties {
     public mouseBlockerColour: number;
     public mouseBlockerAlpha: number;
 
-    constructor(backgroundStyle: string, selectorButtonStyle: string, selectorButtonFont: string, triggerButtonStyle: string, triggerButtonFont: string, position?: PIXI.Point){
+    constructor(backgroundStyle: string, selectorButtonStyle: string, selectorButtonFont: string, triggerButtonStyle: string, triggerButtonFont: string, position?: PIXI.Point) {
         super(position);
         this.backgroundStyle = backgroundStyle;
         this.selectorButtonStyle = selectorButtonStyle;

@@ -45,7 +45,7 @@ export class RadioButton extends Button {
 
     public enable(): void {
         super.enable();
-        let frame: number = this.isOn ? 4: 0;
+        let frame: number = this.isOn ? 4 : 0;
         this.sprite.gotoAndStop(frame);
     }
 

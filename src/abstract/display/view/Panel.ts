@@ -27,7 +27,7 @@ export class Panel extends AbstractView {
     }
 
     protected createObjects(): void {
-        for(let i:number = 0; i < this.objects.length; i++){
+        for (let i: number = 0; i < this.objects.length; i++) {
             this.createObject(i);
         }
     }

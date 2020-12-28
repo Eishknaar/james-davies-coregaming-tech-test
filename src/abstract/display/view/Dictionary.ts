@@ -1,4 +1,4 @@
-export class Dictionary <K, V> {
+export class Dictionary<K, V> {
     protected keys: K[];
     protected values: V[];
 
@@ -9,21 +9,19 @@ export class Dictionary <K, V> {
 
     public set(key: K, value: V): void {
         let index: number = this.keys.indexOf(key);
-        if(index == -1) {
+        if (index == -1) {
             this.values.push(value);
             this.keys.push(key);
-        }
-        else{
+        } else {
             this.values[index] = value;
         }
     }
 
     public getValue(key: K): V {
         let index: number = this.keys.indexOf(key);
-        if(index != -1) {
+        if (index != -1) {
             return this.values[index];
-        }
-        else{
+        } else {
             throw new Error("Dictionary does not contain key '" + key + "'");
         }
     }

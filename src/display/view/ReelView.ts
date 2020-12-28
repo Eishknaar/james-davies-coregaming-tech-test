@@ -14,9 +14,9 @@ export class ReelView extends AbstractGameView {
 
     private reelData: ReelData;
 
-    protected createProperties(properties:AbstractViewProperties): void {
+    protected createProperties(properties: AbstractViewProperties): void {
         super.createProperties(properties);
-        this.properties = <ReelViewProperties> properties;
+        this.properties = <ReelViewProperties>properties;
     }
 
     protected create(): void {
@@ -32,7 +32,7 @@ export class ReelView extends AbstractGameView {
 
     protected createCells(): void {
         this.cells = [];
-        for(let i: number = 0; i < this.properties.numberOfCells; i++) {
+        for (let i: number = 0; i < this.properties.numberOfCells; i++) {
             this.createCell();
         }
         this.panel.refresh();
@@ -46,7 +46,7 @@ export class ReelView extends AbstractGameView {
 
     public spin(): void {
         let delay: number = 0;
-        for(let i: number = 0; i < this.cells.length; i++){
+        for (let i: number = 0; i < this.cells.length; i++) {
             this.callAfter(delay, this.spinCell, this, i);
             delay += this.properties.spinDelay;
         }
@@ -61,7 +61,7 @@ export class ReelView extends AbstractGameView {
     public stop(reelData: ReelData): void {
         this.reelData = reelData;
         let delay: number = 0;
-        for(let i: number = 0; i < this.cells.length; i++){
+        for (let i: number = 0; i < this.cells.length; i++) {
             this.callAfter(delay, this.stopCell, this, i);
             delay += this.properties.spinDelay;
         }

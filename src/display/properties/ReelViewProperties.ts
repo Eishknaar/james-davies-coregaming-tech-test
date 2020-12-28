@@ -7,7 +7,7 @@ export class ReelViewProperties extends AbstractViewProperties {
     public numberOfCells: number;
     public spinDelay: number;
 
-    constructor(){
+    constructor() {
         super();
         this.setDefaultValues();
     }

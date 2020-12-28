@@ -5,7 +5,7 @@ export class FontStroke {
     private lineJoin: string;
     private miterLimit: number;
 
-    constructor(colour: string, thickness: number){
+    constructor(colour: string, thickness: number) {
         this.colour = colour;
         this.thickness = thickness;
         this.initialise();

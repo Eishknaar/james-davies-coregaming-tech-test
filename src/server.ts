@@ -6,7 +6,7 @@ export class Server {
 
     private request: XMLHttpRequest;
 
-    constructor(){
+    constructor() {
         this.create();
     }
 
@@ -18,12 +18,12 @@ export class Server {
         this.request = new XMLHttpRequest();
     }
 
-    public spin(balance: number, stake: number, handler:Function, handlerScope: any): void {
+    public spin(balance: number, stake: number, handler: Function, handlerScope: any): void {
         this.request.open("POST", Server.URL, true);
         let localHandler: Function = this.handleRequestLoaded;
         let localScope: Server = this;
         let xml: string = this.convertToXml(balance, stake);
-        this.request.onload = function(){
+        this.request.onload = function () {
             localHandler.call(
                 localScope,
                 this.responseText, handler, handlerScope
@@ -45,8 +45,7 @@ export class Server {
             let json: string = convert.xml2json(response);
             let realJson = JSON.parse(json);
             data = realJson.elements[0];
-        }
-        catch(e){
+        } catch (e) {
             console.error("Oops! Looks like the game engine didn't understand that. Why don't you try spinning again.");
             responseCode = 0;
         }

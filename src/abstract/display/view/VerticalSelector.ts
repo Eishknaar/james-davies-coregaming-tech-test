@@ -5,7 +5,7 @@ import {VerticalSelectorProperties} from "../properties/VerticalSelectorProperti
 import {Panel} from "./Panel";
 import {Sprite} from "./Sprite";
 import {RadioButton} from "./RadioButton";
-import { gsap } from "gsap";
+import {gsap} from "gsap";
 import {MouseBlocker} from "./MouseBlocker";
 
 export class VerticalSelector extends AbstractView {
@@ -27,7 +27,7 @@ export class VerticalSelector extends AbstractView {
     protected openPos: PIXI.Point;
     protected closePos: PIXI.Point;
 
-    constructor(factory: Factory, properties: AbstractViewProperties, textValues: string[], dataValues: any[], handler: Function, scope: any){
+    constructor(factory: Factory, properties: AbstractViewProperties, textValues: string[], dataValues: any[], handler: Function, scope: any) {
         super(properties);
         this.createFactory(factory);
         this.selectionHandler = handler;
@@ -39,7 +39,7 @@ export class VerticalSelector extends AbstractView {
 
     protected createProperties(properties: AbstractViewProperties) {
         super.createProperties(properties);
-        this.properties = <VerticalSelectorProperties> properties;
+        this.properties = <VerticalSelectorProperties>properties;
     }
 
     protected createFactory(factory: Factory): void {
@@ -78,7 +78,7 @@ export class VerticalSelector extends AbstractView {
 
     protected createSelectorButtons(): void {
         this.selectorButtons = [];
-        for(let i: number = 0; i < this.textValues.length; i++){
+        for (let i: number = 0; i < this.textValues.length; i++) {
             let text: string = this.textValues[i];
             let data: any = this.dataValues[i];
             let button: RadioButton = new RadioButton(this.factory, this.properties.selectorButtonProperties, this.onSelection, this);
@@ -94,9 +94,9 @@ export class VerticalSelector extends AbstractView {
         let size: PIXI.Point = new PIXI.Point(this.selectorBackground.width, this.selectorBackground.height);
         let posY: number = this.position.y - size.y - this.triggerButton.position.y;
         this.selectorBackground.mask = new PIXI.Graphics()
-        .beginFill(0xffffff, 1)
-        .drawRect(this.position.x, posY, size.x, size.y)
-        .endFill();
+            .beginFill(0xffffff, 1)
+            .drawRect(this.position.x, posY, size.x, size.y)
+            .endFill();
     }
 
     protected createTriggerButton(): void {
@@ -105,10 +105,9 @@ export class VerticalSelector extends AbstractView {
     }
 
     protected handleTriggerSelected(): void {
-        if(this.isOpen){
+        if (this.isOpen) {
             this.close();
-        }
-        else{
+        } else {
             this.open();
         }
     }
@@ -117,7 +116,7 @@ export class VerticalSelector extends AbstractView {
         this.isOpen = false;
         this.triggerButton.deselect();
         this.removeChild(this.mouseBlocker);
-        gsap.to(this.selectorBackground,{
+        gsap.to(this.selectorBackground, {
             pixi: {
                 x: this.closePos.x,
                 y: this.closePos.y
@@ -130,7 +129,7 @@ export class VerticalSelector extends AbstractView {
         this.isOpen = true;
         this.triggerButton.select();
         this.addChildAt(this.mouseBlocker, 0);
-        gsap.to(this.selectorBackground,{
+        gsap.to(this.selectorBackground, {
             pixi: {
                 x: this.openPos.x,
                 y: this.openPos.y
@@ -147,8 +146,8 @@ export class VerticalSelector extends AbstractView {
 
     protected onSelection(button: RadioButton): void {
         button.disable();
-        for(let radioButton of this.selectorButtons){
-            if(radioButton.checkIsOn() && radioButton != button){
+        for (let radioButton of this.selectorButtons) {
+            if (radioButton.checkIsOn() && radioButton != button) {
                 radioButton.deselect();
                 radioButton.enable();
             }

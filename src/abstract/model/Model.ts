@@ -1,10 +1,10 @@
-import { EventEmitter } from 'events';
+import {EventEmitter} from 'events';
 import {FontMap} from "../../font/FontMap";
 import {Font} from "../font/Font";
 import {ConfigData} from "../data/ConfigData";
 import {SpinResponse} from "../../api/SpinResponse";
 
-export class Model{
+export class Model {
 
     private eventHandler: EventEmitter;
     private fontMap: FontMap;
@@ -15,7 +15,7 @@ export class Model{
     private displayBalance: number;
     private win: number;
 
-    constructor(){
+    constructor() {
         this.createEventHandler();
         this.createFontMap();
     }

@@ -6,7 +6,7 @@ export class BackgroundProperties extends AbstractViewProperties {
 
     public spriteProperties: SpriteProperties;
 
-    constructor(){
+    constructor() {
         super();
         this.setDefaultValues();
     }

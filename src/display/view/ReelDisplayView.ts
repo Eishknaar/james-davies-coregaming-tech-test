@@ -42,7 +42,7 @@ export class ReelDisplayView extends AbstractGameView {
 
     protected createReels(): void {
         this.reels = [];
-        for(let i: number = 0; i < this.properties.numberOfReels; i++){
+        for (let i: number = 0; i < this.properties.numberOfReels; i++) {
             this.createReel();
         }
         this.panel.refresh();
@@ -55,13 +55,13 @@ export class ReelDisplayView extends AbstractGameView {
     }
 
     protected spinReels(): void {
-        for(let reel of this.reels){
+        for (let reel of this.reels) {
             reel.spin();
         }
     }
 
     protected stopReels(): void {
-        for(let i: number = 0; i < this.reels.length; i++){
+        for (let i: number = 0; i < this.reels.length; i++) {
             this.stopReel(i);
         }
         this.callAfter(this.properties.stopDelay, this.reelsComplete, this);

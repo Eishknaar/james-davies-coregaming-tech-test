@@ -4,7 +4,7 @@ import {FontStrokes} from "./FontStrokes";
 import {FontDropShadows} from "./FontDropShadows";
 import {AbstractFontMap} from "../abstract/font/AbstractFontMap";
 
-export class FontMap extends AbstractFontMap{
+export class FontMap extends AbstractFontMap {
 
     public static TAHOMA: string = "Tahoma";
 
@@ -14,7 +14,6 @@ export class FontMap extends AbstractFontMap{
         this.addStyle(FontStyle.STAKE_SELECTOR_BUTTON, FontMap.TAHOMA, 25, FontColours.WHITE);
         this.addStyle(FontStyle.STAKE_BUTTON, FontMap.TAHOMA, 25, FontColours.WHITE);
     }
-
 
 
 }

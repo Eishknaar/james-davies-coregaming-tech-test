@@ -28,7 +28,7 @@ export class SpinResponse extends AbstractSolidifyable {
     protected solidifyColumnData(): void {
         this.columns = [];
         let dataArray: any[] = this.getObjectArray(ServerConstants.ELEMENTS);
-        for(let data of dataArray){
+        for (let data of dataArray) {
             let columnData: ColumnData = new ColumnData(data);
             this.columns.push(columnData);
         }
@@ -42,12 +42,12 @@ export class SpinResponse extends AbstractSolidifyable {
                 [],
                 []
             ];
-        for(let column of this.columns){
-            for(let row: number = 0; row < column.getSymbols().length; row++){
+        for (let column of this.columns) {
+            for (let row: number = 0; row < column.getSymbols().length; row++) {
                 symbolsArray[row].push(column.getSymbolAt(row));
             }
         }
-        for(let i: number = 0; i < symbolsArray.length; i++){
+        for (let i: number = 0; i < symbolsArray.length; i++) {
             let symbols: number[] = symbolsArray[i];
             this.createReelData(i, symbols);
         }

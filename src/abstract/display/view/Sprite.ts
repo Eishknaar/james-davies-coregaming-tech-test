@@ -1,7 +1,6 @@
 import {AbstractView} from "./AbstractView";
 import {SpriteProperties} from "../properties/SpriteProperties";
 import {AbstractViewProperties} from "../properties/AbstractViewProperties";
-import {Factory} from "../../factory/Factory";
 
 export class Sprite extends AbstractView {
 
@@ -17,7 +16,7 @@ export class Sprite extends AbstractView {
 
     protected createProperties(properties: AbstractViewProperties) {
         super.createProperties(properties);
-        this.properties = <SpriteProperties> properties;
+        this.properties = <SpriteProperties>properties;
     }
 
     protected create(): void {

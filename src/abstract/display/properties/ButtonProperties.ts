@@ -25,7 +25,7 @@ export class ButtonProperties extends AbstractViewProperties {
     protected setDefaultValues() {
         this.fileType = ".png";
         this.debug = false;
-        if(this.fontStyle) {
+        if (this.fontStyle) {
             this.textFieldProperties = new TextFieldProperties(this.fontStyle, this.lang, new PIXI.Point(100, 100), new PIXI.Point(0, 0), AlignConstants.CENTER, AlignConstants.CENTER);
         }
     }

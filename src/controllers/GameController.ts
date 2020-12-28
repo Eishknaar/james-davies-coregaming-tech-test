@@ -30,10 +30,9 @@ export class GameController extends AbstractController {
     }
 
     public handleSpinResponse(responseCode: number, spinData: any): void {
-        if(responseCode == 0){
+        if (responseCode == 0) {
             this.dispatchEvent(EventStyle.SPIN_COMPLETE);
-        }
-        else {
+        } else {
             let spin: SpinResponse = new SpinResponse(spinData);
             this.model.setSpinResponse(spin);
             this.updateBalanceInfo(spin.getBalanceData());

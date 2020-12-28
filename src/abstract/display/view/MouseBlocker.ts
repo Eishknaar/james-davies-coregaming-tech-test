@@ -11,7 +11,7 @@ export class MouseBlocker extends PIXI.Container {
     private isDown: boolean;
     private isOver: boolean;
 
-    constructor(colour: number, alpha: number, handler: Function, scope: any){
+    constructor(colour: number, alpha: number, handler: Function, scope: any) {
         super();
         this.backgroundColour = colour;
         this.backgroundAlpha = alpha;
@@ -28,7 +28,7 @@ export class MouseBlocker extends PIXI.Container {
     protected createBackground(): void {
         this.background = new PIXI.Graphics;
         this.background.beginFill(this.backgroundColour, this.backgroundAlpha);
-        this.background.drawRect(0 ,0, PixiManager.renderer.width, PixiManager.renderer.height);
+        this.background.drawRect(0, 0, PixiManager.renderer.width, PixiManager.renderer.height);
         this.background.endFill();
         this.addChild(this.background);
     }
@@ -56,11 +56,11 @@ export class MouseBlocker extends PIXI.Container {
     }
 
     protected onButtonOver(): void {
-            this.isOver = true;
+        this.isOver = true;
     }
 
     protected onButtonOut(): void {
-            this.isOver = false;
+        this.isOver = false;
     }
 
 

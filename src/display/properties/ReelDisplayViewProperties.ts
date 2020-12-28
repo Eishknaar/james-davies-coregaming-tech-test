@@ -8,7 +8,7 @@ export class ReelDisplayViewProperties extends AbstractViewProperties {
     public spinDelay: number
     public stopDelay: number
 
-    constructor(){
+    constructor() {
         super();
         this.setDefaultValues();
     }

@@ -8,7 +8,7 @@ class PixiManager {
     private height: number;
     private ratio: number;
 
-    constructor(){
+    constructor() {
         this.initialise();
         this.setScene();
         this.resize();
@@ -18,7 +18,7 @@ class PixiManager {
     private initialise(): void {
         this.width = 1920;
         this.height = 1080;
-        this.ratio = this.width/this.height;
+        this.ratio = this.width / this.height;
         window.onresize = () => this.resize();
     }
 
@@ -41,7 +41,7 @@ class PixiManager {
     private resize(): void {
         let screenWidth: number = window.innerWidth;
         let screenHeight: number = window.innerHeight;
-        let screenRatio: number = screenWidth/screenHeight;
+        let screenRatio: number = screenWidth / screenHeight;
 
         let newWidth: number;
         let newHeight: number;
