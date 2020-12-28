@@ -56,6 +56,7 @@ export class ControlPanelView extends AbstractGameView {
     public handleSpin(): void {
         this.dispatchEvent(EventStyle.SPIN_REQUEST);
         this.spinButton.disable();
+        this.stakeSelector.disable();
     }
 
     public handleOptionSelected(button: Button): void {
@@ -66,6 +67,7 @@ export class ControlPanelView extends AbstractGameView {
 
     public handleReelsLanded(): void {
         this.spinButton.enable();
+        this.stakeSelector.enable();
     }
 
 }

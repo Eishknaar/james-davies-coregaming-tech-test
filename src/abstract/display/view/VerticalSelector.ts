@@ -158,5 +158,13 @@ export class VerticalSelector extends AbstractView {
         this.selectionHandler.call(this.selectionScope, button);
     }
 
+    public disable(): void {
+        this.triggerButton.disable();
+    }
+
+    public enable(): void {
+        this.triggerButton.enable();
+    }
+
 
 }
