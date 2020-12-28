@@ -154,8 +154,6 @@ export class Button extends AbstractGameView {
     }
 
     public disable(): void {
-        this.isOver = false;
-        this.isDown = false;
         this.isEnabled = false;
         this.interactive = false;
         this.sprite.gotoAndStop(3);
