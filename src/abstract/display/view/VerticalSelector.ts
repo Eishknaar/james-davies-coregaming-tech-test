@@ -6,6 +6,7 @@ import {Panel} from "./Panel";
 import {Sprite} from "./Sprite";
 import {RadioButton} from "./RadioButton";
 import { gsap } from "gsap";
+import {MouseBlocker} from "./MouseBlocker";
 
 export class VerticalSelector extends AbstractView {
 
@@ -16,6 +17,7 @@ export class VerticalSelector extends AbstractView {
     protected textValues: string[]
     protected dataValues: any[]
 
+    protected mouseBlocker: MouseBlocker;
     protected selectorPanel: Panel;
     protected selectorBackground: Sprite;
     protected selectorButtons: RadioButton[];
@@ -45,6 +47,7 @@ export class VerticalSelector extends AbstractView {
     }
 
     protected create() {
+        this.createMouseBlocker();
         this.createSelectorBackground();
         this.createSelectorPanel();
         this.createSelectorButtons();
@@ -53,6 +56,12 @@ export class VerticalSelector extends AbstractView {
         let posY: number = -this.selectorBackground.height - this.triggerButton.position.y;
         this.openPos = new PIXI.Point(0, posY);
         this.closePos = new PIXI.Point(0, 0);
+    }
+
+    protected createMouseBlocker(): void {
+        this.mouseBlocker = new MouseBlocker(this.properties.mouseBlockerColour, this.properties.mouseBlockerAlpha, this.handleTriggerSelected, this);
+        this.mouseBlocker.position.x = -this.position.x;
+        this.mouseBlocker.position.y = -this.position.y;
     }
 
     protected createSelectorBackground(): void {
@@ -107,6 +116,7 @@ export class VerticalSelector extends AbstractView {
     protected close(): void {
         this.isOpen = false;
         this.triggerButton.deselect();
+        this.removeChild(this.mouseBlocker);
         gsap.to(this.selectorBackground,{
             pixi: {
                 x: this.closePos.x,
@@ -119,6 +129,7 @@ export class VerticalSelector extends AbstractView {
     protected open(): void {
         this.isOpen = true;
         this.triggerButton.select();
+        this.addChildAt(this.mouseBlocker, 0);
         gsap.to(this.selectorBackground,{
             pixi: {
                 x: this.openPos.x,

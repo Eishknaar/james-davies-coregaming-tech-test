@@ -32,8 +32,8 @@ class Main {
     protected create(): void {
         this.createBackground();
         this.createReelDisplay();
-        this.createControlPanel();
         this.createPlayerInfo();
+        this.createControlPanel();
     }
 
     protected createBackground(): void {

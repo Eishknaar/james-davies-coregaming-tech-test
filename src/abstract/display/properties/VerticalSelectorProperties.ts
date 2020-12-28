@@ -19,6 +19,9 @@ export class VerticalSelectorProperties extends AbstractViewProperties {
     public closeDuration: number;
     public openDuration: number;
 
+    public mouseBlockerColour: number;
+    public mouseBlockerAlpha: number;
+
     constructor(backgroundStyle: string, selectorButtonStyle: string, selectorButtonFont: string, triggerButtonStyle: string, triggerButtonFont: string, position?: PIXI.Point){
         super(position);
         this.backgroundStyle = backgroundStyle;
@@ -36,6 +39,8 @@ export class VerticalSelectorProperties extends AbstractViewProperties {
         this.triggerButtonProperties = new RadioButtonProperties(this.triggerButtonStyle, this.triggerButtonFont);
         this.closeDuration = 1;
         this.openDuration = 1;
+        this.mouseBlockerColour = 0x000000;
+        this.mouseBlockerAlpha = 0.5;
     }
 
 }
