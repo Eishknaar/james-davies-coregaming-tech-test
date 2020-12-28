@@ -32,8 +32,8 @@ export class VerticalSelectorProperties extends AbstractViewProperties {
     protected setDefaultValues(): void {
         this.selectorPanelProperties = new PanelProperties(0, 0);
         this.selectorBackgroundProperties = new SpriteProperties(this.backgroundStyle);
-        this.selectorButtonProperties = new RadioButtonProperties(this.selectorButtonStyle, this.selectorButtonFont, "");
-        this.triggerButtonProperties = new RadioButtonProperties(this.triggerButtonStyle, this.triggerButtonFont, "");
+        this.selectorButtonProperties = new RadioButtonProperties(this.selectorButtonStyle, this.selectorButtonFont);
+        this.triggerButtonProperties = new RadioButtonProperties(this.triggerButtonStyle, this.triggerButtonFont);
         this.closeDuration = 1;
         this.openDuration = 1;
     }

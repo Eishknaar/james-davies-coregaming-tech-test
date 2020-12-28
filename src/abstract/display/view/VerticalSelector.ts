@@ -86,7 +86,7 @@ export class VerticalSelector extends AbstractView {
         let posY: number = this.position.y - size.y - this.triggerButton.position.y;
         this.selectorBackground.mask = new PIXI.Graphics()
         .beginFill(0xffffff, 1)
-        .drawRect(0, posY, size.x, size.y)
+        .drawRect(this.position.x, posY, size.x, size.y)
         .endFill();
     }
 
