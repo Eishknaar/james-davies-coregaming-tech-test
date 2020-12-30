@@ -1,6 +1,6 @@
 import {Model} from "../model/Model";
 import {Factory} from "../factory/Factory";
-import {Server} from "../../server";
+import {Server} from "../../Server";
 
 export class AbstractController {
 
