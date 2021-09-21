@@ -17,7 +17,7 @@ GreenSock is an animation library that has an excellent Tween functionality that
 
 #### TexturePacker:
 This is an incredible software that packs all your images into spritesheets.
-It is free to us (to a point) and connects easily to PIXI.
+It is free to use (to a point) and connects easily to PIXI.
 
 ## Instructions
 Open a Command Prompt with admin rights and run
